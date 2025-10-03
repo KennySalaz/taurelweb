@@ -161,7 +161,15 @@
   border-bottom: 2px solid transparent;
   position: relative;
 }
+.track-link:hover {
+  border-bottom: 2px solid #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(26, 144, 206, 0.2);
+}
 
+.track-link:hover::before {
+  opacity: 1;
+}
 .special-links::after {
   content: "";
   position: absolute;
@@ -173,11 +181,11 @@
   background-color: #00000080;
 }
 
-.special-links:hover {
+/* .special-links:hover {
   border-bottom: 2px solid #ffffff;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(26, 144, 206, 0.2);
-}
+} */
 
 .special-links:hover::before {
   opacity: 1;

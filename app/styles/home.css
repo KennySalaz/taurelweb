@@ -42,7 +42,7 @@
   display: flex;
   /*  justify-content: flex-end; */
   align-items: center;
-  max-width: 1650px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 2rem;
   width: 100%;
@@ -329,7 +329,7 @@
 
 .slide-content {
   width: 100%;
-  max-width: 1650px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 2rem;
   height: 100%;

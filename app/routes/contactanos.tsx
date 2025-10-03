@@ -13,6 +13,7 @@ import LocationsFinder from "../components/LocationsFinder";
 import hexaImage from "../assets/hexa-image.png";
 import hexagonaWhite from "../assets/Hexagonos-5.png";
 import mapapoints from "../assets/maos2.png";
+import hexaBlue from "../assets/hexagonos.png";
 
 export function meta() {
   return [
@@ -259,6 +260,16 @@ export default function Contactanos() {
 
       {/* Formulario de Contacto */}
       <section className="contact-form-section">
+        <img
+          className="hexagon-blue-left-form hexagon-hover-zoom"
+          src={hexaBlue}
+          alt="Mapa de Ubicación"
+        />
+        <img
+          className="hexagon-blue-right-form hexagon-hover-zoom"
+          src={hexaBlue}
+          alt="Mapa de Ubicación"
+        />
         <div className="container">
           <motion.div
             className="contact-form-content"
