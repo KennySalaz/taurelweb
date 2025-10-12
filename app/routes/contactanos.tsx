@@ -418,7 +418,7 @@ export default function Contactanos() {
 
             <div className="map-container">
               <div className="map-wrapper">
-                <LocationsFinder googleMapsApiKey="AIzaSyBR74ZoUfUzm9CWR4T8FNDc_BgsAsPoWho" />
+                <LocationsFinder googleMapsApiKey="dfsfsdfsdfs" />
               </div>
 
               <div className="office-hours">
