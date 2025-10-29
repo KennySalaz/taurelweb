@@ -45,12 +45,12 @@ const Navigation = () => {
             <li>
               <Link to="/">Inicio</Link>
             </li>
-            {/* <li>
+            <li>
               <Link to="/servicios">Servicios</Link>
             </li>
             <li>
               <Link to="/sobre-nosotros">Sobre Nosotros</Link>
-            </li> */}
+            </li>
             <li>
               <Link to="/contactanos">Contáctanos</Link>
             </li>

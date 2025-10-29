@@ -1,26 +1,39 @@
-import React, { useEffect } from "react";
-import { motion } from "framer-motion";
-import AnimatedElement from "../components/AnimatedElement";
+import React, { useState } from "react";
 import "../styles/sobre-nosotros.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
-  faTrophy, 
-  faUsers, 
-  faGlobeAmericas, 
-  faShieldAlt, 
-  faHandshake, 
-  faChartLine 
-} from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
+import TopBrandsSlider from "../components/TopBrandsSlider";
+import AboutUsSlider from "../components/AboutUsSlider";
+import CertificationModal from "../components/CertificationModal";
+import imageG1 from "../assets/package-nosotros/Logo camara de comercio 1.png";
+import imageG2 from "../assets/package-nosotros/Logo camara de comercio 2.png";
+import imageG3 from "../assets/package-nosotros/Logo camara de comercio 3.png";
+import imageG4 from "../assets/package-nosotros/Logo camara de comercio 4.png";
+import imageG5 from "../assets/package-nosotros/Logo camara de comercio 5.png";
+import imageG6 from "../assets/package-nosotros/Logo camara de comercio 6.png";
+import imageG7 from "../assets/package-nosotros/Logo camara de comercio 7.png";
+import imageG8 from "../assets/package-nosotros/Logo camara de comercio 8.png";
+import imageG9 from "../assets/package-nosotros/Logo camara de comercio 9.png";
+import imageG10 from "../assets/package-nosotros/Logo camara de comercio 10.png";
+import imageG11 from "../assets/package-nosotros/Logo camara de comercio 11.png";
+import imageG12 from "../assets/package-nosotros/Logo camara de comercio 12.png";
+import imageG13 from "../assets/package-nosotros/Logo camara de comercio 13.png";
+import imageG14 from "../assets/package-nosotros/Logo camara de comercio 14.png";
+import imageG15 from "../assets/package-nosotros/Logo camara de comercio 15.png";
+import imageG16 from "../assets/package-nosotros/Logo camara de comercio 16.png";
+import imageG17 from "../assets/package-nosotros/Logo camara de comercio 17.png";
+import imageG18 from "../assets/package-nosotros/Logo camara de comercio 18.png";
+import imageEmpresa1 from "../assets/package-nosotros-empresa/1.png";
+import imageEmpresa2 from "../assets/package-nosotros-empresa/2.png";
+import imageEmpresa3 from "../assets/package-nosotros-empresa/3.png";
+import imageEmpresa4 from "../assets/package-nosotros-empresa/4.png";
+import imageEmpresa5 from "../assets/package-nosotros-empresa/5.png";
+import imageEmpresa6 from "../assets/package-nosotros-empresa/6.png";
+import backgroundHexLeft from "../assets/Hexagonos-11.png";
+import backgroundHexRight from "../assets/Hexagonos 2.png";
+import isoLogo from "../assets/Logo-ISO.png";
+import fondonormaLogo from "../assets/brillante _FONDONORMA_ 1.png";
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/effect-fade";
-// Import required modules
-import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
 
 export function meta() {
   return [
@@ -30,231 +43,167 @@ export function meta() {
 }
 
 export default function SobreNosotros() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+  const valores = [
+    {
+      icon: imageEmpresa1,
+      titulo: "Pasión por el Servicio",
+      texto:
+        "Nos mueve el entusiasmo por ayudarle y convertir cada reto en una solución.",
+    },
+    {
+      icon: imageEmpresa2,
+      titulo: "Respeto e Inclusión",
+      texto:
+        "Creemos en la diversidad y valoramos a cada persona que forma parte de nuestro camino.",
+    },
+    {
+      icon: imageEmpresa3,
+      titulo: "Ética y Calidad",
+      texto:
+        "Hacemos lo correcto y buscamos siempre superar los más altos estándares.",
+    },
+    {
+      icon: imageEmpresa4,
+      titulo: "Compromiso",
+      texto: "Honramos nuestra palabra y cumplimos lo que ofrecemos.",
+    },
+    {
+      icon: imageEmpresa5,
+      titulo: "Innovación",
+      texto:
+        "Pensamos diferente y encontramos nuevas formas de generar valor.",
+    },
+    {
+      icon: imageEmpresa6,
+      titulo: "Optimización",
+      texto:
+        "Perfeccionamos procesos de manera constante para alcanzar mejores resultados.",
+    },
+  ];
+
+  // Lista de cámaras y gremios. Si agregas un logo en /public/logos/{slug}.png se mostrará automáticamente.
+  const gremios = [
+    { nombre: "VenAmCham", slug: imageG1 },
+    { nombre: "Consecomercio", slug: imageG2 },
+    { nombre: "Conindustria", slug: imageG3 },
+    { nombre: "Cámara de Comercio de Valencia", slug: imageG4 },
+    { nombre: "Cavecol", slug: imageG5 },
+    { nombre: "Cámara de Comercio de Puerto Cabello", slug: imageG6 },
+    { nombre: "ALV", slug: imageG7 },
+    { nombre: "AEX", slug: imageG8 },
+    { nombre: "ASADAEZ", slug: imageG9 },
+    { nombre: "Cámara de Comercio de Maracaibo", slug: imageG10 },
+    { nombre: "ANV", slug: imageG11 },
+    { nombre: "CCI Valencia", slug: imageG12 },
+    { nombre: "Fondonorma", slug: imageG13 },
+    { nombre: "Cámara Venezolano Francesa", slug: imageG14 },
+    { nombre: "ASOCAV", slug: imageG15 },
+    { nombre: "Colegio de Ingenieros", slug: imageG16 },
+    { nombre: "Cámara de Comercio Colombo Venezolana", slug: imageG17 },
+    { nombre: "Cámara de Comercio e Industria Venezolano Italiana", slug: imageG18 },
+  ];
+
   return (
     <div className="sobre-nosotros-page">
-      {/* Hero Banner con Slider */}
-      <section className="banner-slider">
-        <Swiper
-          spaceBetween={0}
-          centeredSlides={true}
-          effect={"fade"}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Autoplay, Pagination, Navigation, EffectFade]}
-          className="banner-swiper"
-        >
-          <SwiperSlide>
-            <div className="banner-slide" style={{ backgroundImage: "url('https://via.placeholder.com/1920x600')" }}>
-              <div className="banner-overlay"></div>
-              <div className="banner-content">
-                <h1>Misión</h1>
-                <p>
-                  Brindar soluciones logísticas integrales que superen las expectativas de nuestros clientes, 
-                  optimizando sus cadenas de suministro con eficiencia, puntualidad y compromiso.
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="banner-slide" style={{ backgroundImage: "url('https://via.placeholder.com/1920x600')" }}>
-              <div className="banner-overlay"></div>
-              <div className="banner-content">
-                <h1>Visión</h1>
-                <p>
-                  Ser reconocidos como líderes en logística internacional, expandiendo nuestra presencia global 
-                  mientras mantenemos un servicio personalizado y de alta calidad.
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="banner-slide" style={{ backgroundImage: "url('https://via.placeholder.com/1920x600')" }}>
-              <div className="banner-overlay"></div>
-              <div className="banner-content">
-                <h1>Valores</h1>
-                <p>
-                  Nos guiamos por la integridad, innovación, excelencia y compromiso con nuestros clientes, 
-                  colaboradores y el medio ambiente.
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
-      </section>
-
-      {/* Nuestra Historia */}
-      <section className="history-section section">
+      {/* About Us Slider */}
+      <AboutUsSlider />
+      
+      {/* Banner superior con marcas aliadas */}
+      <TopBrandsSlider />
+      {/* Sección de Valores */}
+      <section className="values-section section">
         <div className="container">
-          <AnimatedElement animation="fadeUp">
-            <div className="section-title">
-              <h2>Nuestra Historia</h2>
-            </div>
-          </AnimatedElement>
-          
-          <div className="history-content">
-            <AnimatedElement animation="fadeRight" className="history-text">
-              <p>
-                Fundada hace más de 20 años, Taurel nació con la visión de transformar la logística internacional 
-                mediante un servicio personalizado y eficiente. A lo largo de las décadas, hemos crecido constantemente, 
-                ampliando nuestra red global y desarrollando soluciones innovadoras para afrontar los retos de un 
-                mercado cada vez más complejo y dinámico.
-              </p>
-              <p>
-                Nuestra trayectoria está marcada por hitos importantes como la expansión a nuevos mercados, 
-                la implementación de tecnologías avanzadas para el seguimiento de mercancías y la obtención de 
-                certificaciones internacionales que avalan nuestra calidad y compromiso.
-              </p>
-              <p>
-                Hoy, Taurel se ha convertido en un referente en el sector logístico, ofreciendo soluciones integrales 
-                que abarcan desde el transporte marítimo y terrestre hasta la gestión aduanera y el almacenaje. 
-                Nuestro compromiso con la excelencia sigue siendo el pilar fundamental de nuestro crecimiento continuo.
-              </p>
-            </AnimatedElement>
-            
-            <AnimatedElement animation="fadeLeft" className="history-image">
-              <img src="https://via.placeholder.com/600x400" alt="Historia de Taurel" />
-            </AnimatedElement>
+          <div className="values-header">
+            <h3>
+              En nuestra empresa, construimos cada logro sobre una base firme de
+              valores.
+            </h3>
+            <p className="values-subtitle">
+              Ellos son la brújula que guía nuestras decisiones, impulsan
+              nuestro crecimiento y reflejan la esencia de nuestra cultura
+              organizacional.
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* Por qué elegirnos */}
-      <section className="why-choose-us section">
-        <div className="container">
-          <AnimatedElement animation="fadeUp">
-            <div className="section-title">
-              <h2>¿Por qué elegirnos?</h2>
-            </div>
-          </AnimatedElement>
-          
-          <div className="features-grid">
-            <AnimatedElement animation="fadeUp" delay={0.1} className="feature-item">
-              <div className="feature-icon">
-                <FontAwesomeIcon icon={faTrophy} />
-              </div>
-              <h3>Experiencia</h3>
-              <p>Más de 20 años brindando soluciones logísticas de excelencia</p>
-            </AnimatedElement>
-            
-            <AnimatedElement animation="fadeUp" delay={0.2} className="feature-item">
-              <div className="feature-icon">
-                <FontAwesomeIcon icon={faGlobeAmericas} />
-              </div>
-              <h3>Cobertura Global</h3>
-              <p>Presencia en los principales mercados internacionales</p>
-            </AnimatedElement>
-            
-            <AnimatedElement animation="fadeUp" delay={0.3} className="feature-item">
-              <div className="feature-icon">
-                <FontAwesomeIcon icon={faUsers} />
-              </div>
-              <h3>Equipo Experto</h3>
-              <p>Profesionales altamente capacitados y especializados</p>
-            </AnimatedElement>
-            
-            <AnimatedElement animation="fadeUp" delay={0.4} className="feature-item">
-              <div className="feature-icon">
-                <FontAwesomeIcon icon={faShieldAlt} />
-              </div>
-              <h3>Seguridad</h3>
-              <p>Sistemas y protocolos avanzados para proteger su carga</p>
-            </AnimatedElement>
-            
-            <AnimatedElement animation="fadeUp" delay={0.5} className="feature-item">
-              <div className="feature-icon">
-                <FontAwesomeIcon icon={faHandshake} />
-              </div>
-              <h3>Atención Personalizada</h3>
-              <p>Soluciones adaptadas a las necesidades específicas de cada cliente</p>
-            </AnimatedElement>
-            
-            <AnimatedElement animation="fadeUp" delay={0.6} className="feature-item">
-              <div className="feature-icon">
-                <FontAwesomeIcon icon={faChartLine} />
-              </div>
-              <h3>Innovación</h3>
-              <p>Constante mejora y adopción de nuevas tecnologías</p>
-            </AnimatedElement>
-          </div>
-        </div>
-      </section>
-
-      {/* Alianzas y Certificaciones */}
-      <section className="alliances-section section">
-        <div className="container">
-          <div className="alliances-grid">
-            <AnimatedElement animation="fadeRight" className="alliances-content">
-              <div className="section-title text-left">
-                <h2>Participación Activa en Gremios y Cámaras</h2>
-              </div>
-              <p>
-                Formamos parte activa de las principales asociaciones y gremios del sector logístico, 
-                lo que nos permite estar a la vanguardia de las tendencias y regulaciones de la industria, 
-                ofreciendo así un servicio actualizado y de calidad a nuestros clientes.
-              </p>
-              
-              <div className="alliances-logos">
-                <AnimatedElement animation="fadeIn" delay={0.1} className="alliance-logo">
-                  <img src="https://via.placeholder.com/120x60" alt="Alianza 1" />
-                </AnimatedElement>
-                <AnimatedElement animation="fadeIn" delay={0.2} className="alliance-logo">
-                  <img src="https://via.placeholder.com/120x60" alt="Alianza 2" />
-                </AnimatedElement>
-                <AnimatedElement animation="fadeIn" delay={0.3} className="alliance-logo">
-                  <img src="https://via.placeholder.com/120x60" alt="Alianza 3" />
-                </AnimatedElement>
-                <AnimatedElement animation="fadeIn" delay={0.4} className="alliance-logo">
-                  <img src="https://via.placeholder.com/120x60" alt="Alianza 4" />
-                </AnimatedElement>
-              </div>
-            </AnimatedElement>
-            
-            <AnimatedElement animation="fadeLeft" className="certifications-content">
-              <div className="section-title text-left">
-                <h2>Nuestras Certificaciones</h2>
-              </div>
-              <p>
-                Contamos con las certificaciones más importantes de la industria, garantizando que nuestros 
-                procesos cumplen con los más altos estándares de calidad y seguridad.
-              </p>
-              
-              <div className="certification-items">
-                <div className="certification-item">
-                  <img src="https://via.placeholder.com/80x80" alt="Certificación ISO" />
-                  <div className="certification-details">
-                    <h4>ISO 9001:2015</h4>
-                    <p>Sistema de Gestión de Calidad</p>
-                  </div>
+          <div className="values-grid">
+            <img src={backgroundHexLeft} className="values-section-before" />
+            <img src={backgroundHexRight} className="values-section-after" />
+            {valores.map((v, idx) => (
+              <div key={idx} className="value-card">
+                <div className="value-icon-wrap" aria-hidden>
+                  <img src={v.icon} alt={v.titulo} />
                 </div>
-                <div className="certification-item">
-                  <img src="https://via.placeholder.com/80x80" alt="Certificación OEA" />
-                  <div className="certification-details">
-                    <h4>Operador Económico Autorizado</h4>
-                    <p>Certificación aduanera de seguridad</p>
-                  </div>
-                </div>
+                <h4>{v.titulo}</h4>
+                <p>{v.texto}</p>
               </div>
-            </AnimatedElement>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="cta-section">
+      {/* Sección de Gremios y Cámaras */}
+      <section className="chambers-section section">
         <div className="container">
-          <AnimatedElement animation="fadeUp" className="cta-content">
-            <h2>Trabajemos juntos</h2>
-            <p>Descubre cómo podemos ayudarte a optimizar tu cadena logística con soluciones personalizadas.</p>
-            <a href="/contactanos" className="btn btn-primary">Contáctanos</a>
-          </AnimatedElement>
+          <div className="section-title">
+            <h2 className="uppercase">Participación activa en gremios y cámaras</h2>
+            <p className="chambers-subtitle">Ofrecemos mucho más que logística</p>
+          </div>
+
+          <div className="chambers-grid">
+            {gremios.map((g) => (
+              <div key={g.slug} className="chamber-item" title={g.nombre}>
+                {/* La imagen se mostrará si existe en /public/logos/{slug}.png */}
+                <img
+                  src={g.slug}
+                  alt={g.nombre}
+                  loading="lazy"
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    img.style.display = "none";
+                    const placeholder = img.nextElementSibling as HTMLElement | null;
+                    if (placeholder) placeholder.style.display = "flex";
+                  }}
+                />
+                <span className="logo-placeholder" aria-hidden>
+                  {g.nombre}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* Sección de Certificaciones */}
+      <div className="certifications section">
+        <div className="cert-banner">
+          <img src={isoLogo} alt="ISO" className="cert-logo cert-logo-left" />
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            whileHover={{ scale: 1, cursor: "pointer" }}
+            whileTap={{ scale: 0.98 }}
+            onClick={openModal}
+            className="cert-title"
+          >
+            Certificación ISO 9001:2025
+          </motion.h3>
+          <img
+            src={fondonormaLogo}
+            alt="FONDONORMA"
+            className="cert-logo cert-logo-right"
+          />
+        </div>
+      </div>
+
+      {/* Modal de Certificaciones */}
+      <CertificationModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 }

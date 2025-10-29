@@ -549,7 +549,7 @@
   gap: 16px;
   padding: 0px 24px;
   border-radius: 4px;
-  background: #ffffff;
+/*   background: #ffffff; */
   transition: all 0.3s ease;
   user-select: none;
 }

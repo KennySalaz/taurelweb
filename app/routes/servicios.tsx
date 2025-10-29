@@ -3,212 +3,342 @@ import { motion } from "framer-motion";
 import AnimatedElement from "../components/AnimatedElement";
 import "../styles/servicios.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
-  faShip, 
-  faTruckMoving, 
-  faWarehouse, 
-  faFileAlt, 
-  faCube, 
-  faGlobeAmericas 
+import imageMap from "../assets/maps.png";
+import flowSends from "../assets/flow-send.png";
+import hexagonIcon from "../assets/arrow-right.png";
+import hexagonos from "../assets/hexagonos.png";
+import {
+  faShip,
+  faTruckMoving,
+  faWarehouse,
+  faFileAlt,
+  faCube,
+  faGlobeAmericas,
 } from "@fortawesome/free-solid-svg-icons";
 
 export function meta() {
   return [
     { title: "Servicios - Taurel" },
-    { name: "description", content: "Conoce nuestros servicios logísticos y de transporte internacional" },
+    {
+      name: "description",
+      content:
+        "Conoce nuestros servicios logísticos y de transporte internacional",
+    },
   ];
 }
 
 export default function Servicios() {
   return (
     <div className="servicios-page">
-      {/* Hero */}
-      <section className="page-hero">
-        <div className="page-hero-overlay"></div>
+      {/* Asesoría Técnica */}
+      <section className="advisory-section section">
         <div className="container">
-          <motion.div 
-            className="page-hero-content"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <h1>Servicios</h1>
-            <p>Nuestras Soluciones Logísticas</p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Servicios Principales */}
-      <section className="main-services section">
-        <div className="container">
-          <AnimatedElement animation="fadeUp">
-            <div className="section-title">
-              <h2>Transporte Internacional de Carga</h2>
-            </div>
-            <p className="section-description">
-              En Taurel Internacional de Carga ofrecemos soluciones logísticas completas para optimizar su cadena de suministro.
-            </p>
-          </AnimatedElement>
-
-          <div className="service-boxes">
-            <AnimatedElement animation="fadeUp" delay={0.1} className="service-box">
-              <div className="service-icon">
-                <FontAwesomeIcon icon={faShip} />
+          <div className="service-content-wrapper">
+            <img
+              src={hexagonos}
+              alt="Hexágonos decorativos"
+              className="hexagonos-decorativos"
+            />
+            <AnimatedElement
+              animation="fadeLeft"
+              className="service-text-content"
+            >
+              <div className="service-icon-title">
+                <img
+                  style={{ width: "40px", height: "40px" }}
+                  src={hexagonIcon}
+                  alt=""
+                />
+                <h2>Asesoría técnica</h2>
               </div>
-              <h3>Transporte Marítimo</h3>
-              <p>
-                Servicio de transporte marítimo con conexiones a los principales puertos del mundo. Ofrecemos soluciones para carga completa y consolidada.
+              <p className="service-description">
+                Ponemos a tu disposición asesoría técnica especializada en
+                materia de aduanas, comercio internacional e integración
+                económica.
               </p>
-              <ul className="service-features">
-                <li>Servicio de puerta a puerta</li>
-                <li>Rastreo en línea</li>
-                <li>Consolidación de carga</li>
+              <ul className="service-list">
+                <li>Asesoramos.</li>
+                <li>Informamos.</li>
+                <li>Apoyamos</li>
               </ul>
-            </AnimatedElement>
-
-            <AnimatedElement animation="fadeUp" delay={0.2} className="service-box">
-              <div className="service-icon">
-                <FontAwesomeIcon icon={faTruckMoving} />
-              </div>
-              <h3>Transporte Terrestre</h3>
-              <p>
-                Red de transporte terrestre que conecta los principales centros logísticos con entregas puntuales y servicio personalizado.
+              <p className="service-extra-info">
+                Trámite de permisos requeridos, por las autoridades aduaneras,
+                para el ingreso o extracción de mercancías relacionadas con el
+                territorio nacional.
               </p>
-              <ul className="service-features">
-                <li>Flota moderna y segura</li>
-                <li>Seguimiento GPS en tiempo real</li>
-                <li>Transporte nacional e internacional</li>
-              </ul>
             </AnimatedElement>
 
-            <AnimatedElement animation="fadeUp" delay={0.3} className="service-box">
-              <div className="service-icon">
-                <FontAwesomeIcon icon={faFileAlt} />
-              </div>
-              <h3>Gestión Aduanera</h3>
-              <p>
-                Servicios integrales de gestión aduanera para facilitar sus importaciones y exportaciones cumpliendo con todas las regulaciones.
-              </p>
-              <ul className="service-features">
-                <li>Asesoría en comercio exterior</li>
-                <li>Clasificación arancelaria</li>
-                <li>Documentación y permisos</li>
-              </ul>
-            </AnimatedElement>
-          </div>
-        </div>
-      </section>
-
-      {/* Servicios Marítimos */}
-      <section className="maritime-services section">
-        <div className="container">
-          <AnimatedElement animation="fadeUp">
-            <div className="section-title">
-              <h2>Servicios Marítimos</h2>
-            </div>
-          </AnimatedElement>
-
-          <div className="services-content">
-            <AnimatedElement animation="fadeLeft" className="services-image">
-              <div className="hexagon-image">
-                <img src="https://via.placeholder.com/600x400" alt="Servicios Marítimos" />
-              </div>
-            </AnimatedElement>
-            
-            <AnimatedElement animation="fadeRight" className="services-text">
-              <h3>Conectamos todos los continentes con nuestros servicios marítimos</h3>
-              <p>
-                Ofrecemos soluciones de transporte marítimo global para todo tipo de carga. Nuestro equipo experto gestiona cada embarque con atención al detalle y compromiso con la excelencia.
-              </p>
-              <div className="service-details">
-                <div className="service-detail">
-                  <FontAwesomeIcon icon={faGlobeAmericas} className="detail-icon" />
-                  <div className="detail-text">
-                    <h4>Cobertura Global</h4>
-                    <p>Conexiones con los principales puertos del mundo</p>
-                  </div>
-                </div>
-                <div className="service-detail">
-                  <FontAwesomeIcon icon={faCube} className="detail-icon" />
-                  <div className="detail-text">
-                    <h4>Carga Consolidada</h4>
-                    <p>Soluciones eficientes para envíos más pequeños</p>
-                  </div>
-                </div>
-                <div className="service-detail">
-                  <FontAwesomeIcon icon={faWarehouse} className="detail-icon" />
-                  <div className="detail-text">
-                    <h4>Almacenaje Temporal</h4>
-                    <p>Instalaciones seguras para su mercancía</p>
-                  </div>
-                </div>
-              </div>
-              <a href="/contactanos" className="btn btn-primary">Solicitar Cotización</a>
-            </AnimatedElement>
-          </div>
-        </div>
-      </section>
-
-      {/* Cadena Logística */}
-      <section className="logistics-chain section">
-        <div className="container">
-          <AnimatedElement animation="fadeUp">
-            <div className="section-title">
-              <h2>Cadena Logística Completa</h2>
-            </div>
-          </AnimatedElement>
-          
-          <div className="logistics-flow">
-            <AnimatedElement animation="fadeUp" delay={0.1} className="logistics-step">
-              <div className="step-number">1</div>
-              <div className="step-content">
-                <h4>Planificación</h4>
-                <p>Análisis de sus necesidades y diseño de soluciones personalizadas</p>
-              </div>
-            </AnimatedElement>
-            
-            <AnimatedElement animation="fadeUp" delay={0.2} className="logistics-step">
-              <div className="step-number">2</div>
-              <div className="step-content">
-                <h4>Recogida</h4>
-                <p>Recolección de mercancía en el punto de origen</p>
-              </div>
-            </AnimatedElement>
-            
-            <AnimatedElement animation="fadeUp" delay={0.3} className="logistics-step">
-              <div className="step-number">3</div>
-              <div className="step-content">
-                <h4>Transporte</h4>
-                <p>Traslado seguro y eficiente por vía marítima, terrestre o aérea</p>
-              </div>
-            </AnimatedElement>
-            
-            <AnimatedElement animation="fadeUp" delay={0.4} className="logistics-step">
-              <div className="step-number">4</div>
-              <div className="step-content">
-                <h4>Aduanas</h4>
-                <p>Gestión de trámites y documentación aduanera</p>
-              </div>
-            </AnimatedElement>
-            
-            <AnimatedElement animation="fadeUp" delay={0.5} className="logistics-step">
-              <div className="step-number">5</div>
-              <div className="step-content">
-                <h4>Entrega</h4>
-                <p>Distribución final hasta el punto de destino</p>
+            <AnimatedElement
+              animation="fadeRight"
+              className="service-image-content"
+            >
+              <div className="hexagon-image-container">
+                <img
+                  src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                  alt="Asesoría técnica - Reunión de negocios"
+                />
               </div>
             </AnimatedElement>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="cta-section">
+      {/* Transporte de Carga Internacional */}
+      <section className="international-transport-section section">
         <div className="container">
-          <AnimatedElement animation="fadeUp" className="cta-content">
-            <h2>Soluciones logísticas a medida</h2>
-            <p>Contáctanos para discutir cómo podemos ayudar a optimizar tu cadena de suministro.</p>
-            <a href="/contactanos" className="btn btn-primary">Solicitar Información</a>
+          <div className="service-content-wrapper reverse">
+            <AnimatedElement
+              animation="fadeLeft"
+              className="service-image-content"
+            >
+              <div className="hexagon-image-container">
+                <div className="geometric-elements">
+                  <div className="hexagon-accent"></div>
+                  <div className="hexagon-accent small"></div>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                  alt="Transporte de carga internacional"
+                />
+              </div>
+            </AnimatedElement>
+
+            <AnimatedElement
+              animation="fadeRight"
+              className="service-text-content"
+            >
+              <div className="service-icon-title">
+                <img
+                  style={{ width: "40px", height: "40px" }}
+                  src={hexagonIcon}
+                  alt=""
+                />
+                <h2>Transporte de Carga Internacional:</h2>
+              </div>
+              <p className="service-highlight">
+                <em>
+                  Llegamos a más de 180 países del mundo, lo que nos permite
+                  ofrecerte:
+                </em>
+              </p>
+              <ul className="service-list">
+                <li>Cobertura en todos los continentes.</li>
+                <li>Servicios consolidados aéreos, marítimos y multimodal.</li>
+                <li>
+                  Servicio de contenedores completos (FCL) y carga fraccionada
+                  (LCL).
+                </li>
+                <li>
+                  Transporte terrestre internacional en furgones completos (FTL)
+                  y fraccionados (LTL).
+                </li>
+              </ul>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
+      {/* Transporte Terrestre */}
+      <section className="ground-transport-section section">
+        <div className="container">
+          <div className="service-content-wrapper" style={{paddingLeft: "30px" }}>
+            <AnimatedElement
+              animation="fadeLeft"
+              className="service-text-content"
+              
+            >
+              <div className="service-icon-title">
+                <img
+                  style={{ width: "40px", height: "40px" }}
+                  src={hexagonIcon}
+                  alt=""
+                />
+                <h2>Transporte Terrestre:</h2>
+              </div>
+              <p className="service-description">
+                De manera eficiente, segura e integrada, colocamos a tu
+                disposición el servicio de flete terrestre nacional, a fin de
+                garantizar que tus cargas lleguen a tiempo en el lugar exacto,
+                bajo el cuidado de la misma empresa, con los controles y
+                estándares de calidad.
+              </p>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
+      {/* Almacenamiento y Distribución / Servicios Navieros */}
+      <section className="storage-maritime-section section">
+        <div className="container">
+          <div className="storage-maritime-content">
+            {/* Imagen de fondo con mapa */}
+            <div className="map-background">
+              <img src={imageMap} alt="Mapa mundial" />
+            </div>
+
+            {/* Almacenamiento y Distribución */}
+            <AnimatedElement
+              animation="fadeUp"
+              delay={0.1}
+              className="storage-section"
+            >
+              <div className="service-icon-title">
+                <img
+                  style={{ width: "40px", height: "40px" }}
+                  src={hexagonIcon}
+                  alt=""
+                />
+                <h2>Almacenamiento y Distribución:</h2>
+              </div>
+
+              <p className="service-description">
+                <strong>Compras Internacionales:</strong> Ponemos a tu
+                disposición un equipo capacitado y de alto rendimiento que te
+                guiará en cada paso durante todo el proceso, desde donde
+                realizar tus compras hasta colocarlo en la puerta de tu fábrica.
+                Cubriendo demanda desde Asia hasta Latinoamérica.
+              </p>
+
+              <ul className="service-list">
+                <li>
+                  Soluciones integrales en compras y logísticas, con envíos
+                  aéreos y marítimos.
+                </li>
+                <li>
+                  Consolidación de carga, sin importar el tamaño y ubicación.
+                </li>
+                <li>
+                  Networking, investigación de mercado para importación y
+                  exportación.
+                </li>
+                <li>
+                  Envío de carga desde Miami a Venezuela, haciendo entrega en
+                  almacenes u oficinas.
+                </li>
+              </ul>
+            </AnimatedElement>
+
+            {/* Servicios Navieros */}
+            <AnimatedElement
+              animation="fadeUp"
+              delay={0.2}
+              className="maritime-section"
+            >
+              <div className="service-icon-title">
+                <img
+                  style={{ width: "40px", height: "40px" }}
+                  src={hexagonIcon}
+                  alt=""
+                />
+                <h2>Servicios Navieros</h2>
+              </div>
+
+              <p className="service-description">
+                Desde 1945, hemos perfeccionado nuestro servicio para ofrecer la
+                excelencia que tu negocio merece. Nuestra vasta experiencia nos
+                ha posicionado como agentes de confianza en Venezuela para las
+                líneas navieras más importantes del mundo.
+              </p>
+
+              <div className="maritime-services-grid">
+                <div className="maritime-service-column">
+                  <h4>Manejo de contenedores llenos y vacíos:</h4>
+                  <ul className="service-sublist">
+                    <li>
+                      Gestión total de contenedores: llenos y vacíos con
+                      movilización eficiente en los principales puertos de
+                      Venezuela.
+                    </li>
+                    <li>
+                      Control y monitoreo en tiempo real: ofrecemos visibilidad
+                      y control sobre el estatus de sus equipos.
+                    </li>
+                    <li>
+                      Seguridad: garantizamos la integridad de su mercancía y el
+                      resguardo de los contenedores.
+                    </li>
+                    <li>
+                      Reparaciones de contenedores: operamos bajo estándares
+                      internacionales.
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="maritime-service-column">
+                  <h4>Actuando como:</h4>
+                  <ul className="service-sublist">
+                    <li>Agente general</li>
+                    <li>Agente portuario</li>
+                    <li>Agente protector</li>
+                    <li>
+                      Manejo de carga pesada y voluminosa, y coordinación de las
+                      operaciones de carga y descarga.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
+      {/* Agenciamiento Aduana */}
+      <section className="customs-agency-section section">
+        <div className="container">
+          <div className="service-content-wrapper">
+            <AnimatedElement
+              animation="fadeLeft"
+              className="service-text-content"
+            >
+              <div className="service-icon-title">
+                <img
+                  style={{ width: "40px", height: "40px" }}
+                  src={hexagonIcon}
+                  alt=""
+                />
+                <h2>Agenciamiento Aduana</h2>
+              </div>
+              <p className="service-description">
+                Con más de 110 años de experiencia en el mercado venezolano,
+                atendemos tus importaciones, exportaciones y/o tránsito de
+                embarques; así como tu reimportación, reexportación,
+                reexpedición, almacenamiento o depósito y/o la aplicación de los
+                Regímenes Aduaneros Especiales, a través de todas las aduanas
+                habilitadas marítimas, aéreas y terrestres, en las que tenemos
+                presencia.
+              </p>
+            </AnimatedElement>
+
+            <AnimatedElement
+              animation="fadeRight"
+              className="service-image-content"
+            >
+              <div className="hexagon-image-container">
+                <div className="geometric-elements-left">
+                  <div className="hexagon-accent-left"></div>
+                  <div className="hexagon-accent-left small"></div>
+                </div>
+                <img
+                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                  alt="Agenciamiento Aduana - Puerto y contenedores"
+                />
+              </div>
+            </AnimatedElement>
+          </div>
+        </div>
+      </section>
+
+      {/* Nuestra Cadena Logística */}
+      <section className="logistics-chain-flow section">
+        <div>
+          <AnimatedElement animation="fadeUp">
+            <div className="logistics-chain-header">
+              <h2>NUESTRA CADENA LOGÍSTICA...</h2>
+            </div>
+          </AnimatedElement>
+
+          <AnimatedElement animation="fadeUp" delay={0.2}>
+            <div className="logistics-flow-background"></div>
           </AnimatedElement>
         </div>
       </section>

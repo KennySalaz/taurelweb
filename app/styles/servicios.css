@@ -1,3 +1,410 @@
+/* Estilos para las nuevas secciones de servicios */
+
+/* Asesoría Técnica */
+.advisory-section {
+  background-color: white;
+  padding: 40px 30px;
+  position: relative;
+}
+
+.service-content-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.service-content-wrapper.reverse {
+  direction: rtl;
+  grid-template-columns: 1fr 2fr;
+}
+.hexagonos-decorativos {
+     position: absolute;
+    top: 50%;
+    left: -147px;
+    width: 230px;
+    height: auto;
+}
+.service-content-wrapper.reverse > * {
+  direction: ltr;
+}
+
+.service-text-content {
+  padding: 10px 0;
+}
+
+.service-icon-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  gap: 20px;
+}
+
+.hexagon-elements {
+  display: flex;
+  gap: 5px;
+  margin-right: 15px;
+}
+
+.hexagon-small {
+  width: 20px;
+  height: 23px;
+  background-color: var(--secondary-color);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.service-icon-title h2 {
+  color: #243C6B;
+  font-size: 2.2rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.service-description {
+  font-size: 1.1rem;
+  color: #243C6B;
+  line-height: 1.6;
+}
+
+.service-list {
+  list-style: none;
+  padding: 0;
+}
+
+.service-list li {
+  position: relative;
+  padding-left: 25px;
+  color: var(--text-color);
+  font-size: 1.05rem;
+}
+
+.service-list li::before {
+  content: '•';
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
+
+.service-extra-info {
+  font-size: 1rem;
+  color: #243C6B;
+  line-height: 1.6;
+  margin-top: 25px;
+}
+
+.service-image-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hexagon-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.hexagon-image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  aspect-ratio: 4/3;
+}
+
+/* Transporte de Carga Internacional y Terrestre */
+.international-transport-section {
+      background-color: #F8FAFF;
+    padding: 20px 30px;
+    box-shadow: 2px 0px 13px -9px #000000;
+    margin-top: 20px;
+}
+
+.ground-transport-section {
+  background-color: #F8FAFF;
+  padding:0;
+  box-shadow: 0px 7px 6px -9px #000000b9;
+  margin-bottom: 12px;
+}
+
+.geometric-elements {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  z-index: 1;
+}
+
+.hexagon-accent {
+  width: 60px;
+  height: 69px;
+  background-color: var(--primary-color);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  opacity: 0.8;
+}
+
+.hexagon-accent.small {
+  width: 30px;
+  height: 35px;
+  background-color: var(--secondary-color);
+  position: absolute;
+  top: 40px;
+  right: 30px;
+}
+
+.service-highlight {
+  font-style: italic;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Almacenamiento y Distribución / Servicios Navieros */
+.storage-maritime-section {
+  background-color: white;
+  padding: 40px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.storage-maritime-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.map-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-background img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.storage-section,
+.maritime-section {
+  position: relative;
+}
+
+.maritime-services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.maritime-service-column h4 {
+  color: #243C6B;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.service-sublist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-sublist li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  color: #243C6B;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.service-sublist li::before {
+  content: '•';
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: -1px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .service-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .service-content-wrapper.reverse {
+    direction: ltr;
+  }
+  
+  .service-icon-title {
+    justify-content: center;
+  }
+  
+  .hexagon-image-container {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .maritime-services-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .advisory-section,
+  .international-transport-section,
+  .ground-transport-section,
+  .storage-maritime-section,
+  .customs-agency-section,
+  .logistics-chain-flow {
+    padding: 60px 0;
+    position: relative;
+  }
+  
+  .service-icon-title h2 {
+    font-size: 1.8rem;
+  }
+  
+  .service-content-wrapper {
+    gap: 30px;
+  }
+  
+  .hexagon-image-container img {
+    clip-path: none;
+    border-radius: 15px;
+  }
+  
+  .storage-section,
+  .maritime-section {
+    padding: 30px 20px;
+  }
+  
+  .logistics-chain-header h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .logistics-flow-background {
+    height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .advisory-section,
+  .international-transport-section,
+  .ground-transport-section,
+  .storage-maritime-section,
+  .customs-agency-section,
+  .logistics-chain-flow {
+    padding: 40px 0;
+  }
+  
+  .service-icon-title {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .service-icon-title h2 {
+    font-size: 1.5rem;
+  }
+  
+  .storage-section,
+  .maritime-section {
+    padding: 25px 15px;
+  }
+  
+  .storage-maritime-content {
+    gap: 30px;
+  }
+  
+  .logistics-chain-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+  }
+  
+  .logistics-flow-background {
+    height: 300px;
+    margin: 0 10px;
+  }
+}
+
+/* Agenciamiento Aduana */
+.customs-agency-section {
+  background-color: #F8FAFF;
+  padding: 80px 30px;
+}
+
+.geometric-elements-left {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  z-index: 1;
+}
+
+.hexagon-accent-left {
+  width: 60px;
+  height: 69px;
+  background-color: var(--primary-color);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  opacity: 0.8;
+}
+
+.hexagon-accent-left.small {
+  width: 30px;
+  height: 35px;
+  background-color: var(--secondary-color);
+  position: absolute;
+  top: 40px;
+  left: 30px;
+}
+
+/* Nuestra Cadena Logística */
+.logistics-chain-flow {
+background: linear-gradient(180deg, #1A90CE 0%, #243C6B 85%);
+  padding: 80px 0;
+  color: white;
+  text-align: center;
+}
+
+.logistics-chain-header h2 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.logistics-flow-background {
+  width: 100%;
+  height: 35vh;
+  background-image: url('../assets/flow-send.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 /* Estilos para la página de servicios */
 
 /* Hero */
