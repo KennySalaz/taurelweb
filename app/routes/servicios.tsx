@@ -1,20 +1,11 @@
-import React from "react";
-import { motion } from "framer-motion";
 import AnimatedElement from "../components/AnimatedElement";
 import "../styles/servicios.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import imageMap from "../assets/maps.png";
-import flowSends from "../assets/flow-send.png";
 import hexagonIcon from "../assets/arrow-right.png";
 import hexagonos from "../assets/hexagonos.png";
-import {
-  faShip,
-  faTruckMoving,
-  faWarehouse,
-  faFileAlt,
-  faCube,
-  faGlobeAmericas,
-} from "@fortawesome/free-solid-svg-icons";
+import heaxogono3 from "../assets/Hexagonos 3.png";
+import hexagonoBgLeft from "../assets/Hexagonos 4.png";
+import hexagonoBgRight from "../assets/Hexagonos 9.png";
 
 export function meta() {
   return [
@@ -30,15 +21,19 @@ export function meta() {
 export default function Servicios() {
   return (
     <div className="servicios-page">
+      <div className="page-header-servicios">
+        <h2>Nuestras Soluciones Logisticas</h2>
+      </div>
       {/* Asesoría Técnica */}
       <section className="advisory-section section">
-        <div className="container">
-          <div className="service-content-wrapper">
-            <img
-              src={hexagonos}
+          <img
+              src={heaxogono3}
               alt="Hexágonos decorativos"
               className="hexagonos-decorativos"
             />
+        <div className="container">
+          <div className="service-content-wrapper">
+          
             <AnimatedElement
               animation="fadeLeft"
               className="service-text-content"
@@ -141,11 +136,13 @@ export default function Servicios() {
       {/* Transporte Terrestre */}
       <section className="ground-transport-section section">
         <div className="container">
-          <div className="service-content-wrapper" style={{paddingLeft: "30px" }}>
+          <div
+            className="service-content-wrapper"
+            style={{ paddingLeft: "30px" }}
+          >
             <AnimatedElement
               animation="fadeLeft"
               className="service-text-content"
-              
             >
               <div className="service-icon-title">
                 <img
@@ -284,6 +281,8 @@ export default function Servicios() {
 
       {/* Agenciamiento Aduana */}
       <section className="customs-agency-section section">
+        <img src={hexagonoBgLeft} alt="" className="hexagono-bg left" />
+        <img src={hexagonoBgRight} alt="" className="hexagono-bg right" />
         <div className="container">
           <div className="service-content-wrapper">
             <AnimatedElement
