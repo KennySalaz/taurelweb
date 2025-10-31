@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons";
 import "../styles/footer.css";
 import TaurelLogo from "../assets/logo.png";
 import LinkedinIcon from "../assets/linkedin.png";
@@ -121,19 +119,45 @@ const Footer = () => {
                 <span className="icon-wrap">
                   <img src={phone} alt="Teléfono" />
                 </span>
-                <span>+58 424-1665906</span>
+                <a
+                  style={{ color: "white" }}
+                  href="https://wa.me/584241665906"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="whatsapp-link"
+                  aria-label="Contactar por WhatsApp"
+                >
+                  +58 424-1665906
+                </a>
               </li>
               <li>
                 <span className="icon-wrap">
                   <img src={phone} alt="Teléfono" />
                 </span>
-                <span>+58 424-2584353</span>
+                <a
+                  style={{ color: "white" }}
+                  href="https://wa.me/584241665906"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="whatsapp-link"
+                  aria-label="Contactar por WhatsApp"
+                >
+                  +58 424-2584353
+                </a>
               </li>
               <li>
                 <span className="icon-wrap icon-custom-location">
                   <img src={location} alt="Ubicación" />
                 </span>
-                <span>Boleíta Norte, Caracas Dtto Capital</span>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Boleíta+Norte,+Caracas+Dtto+Capital"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: "white" }}
+                  aria-label="Ver ubicación en Google Maps"
+                >
+                  Boleíta Norte, Caracas Dtto Capital
+                </a>
               </li>
             </ul>
 

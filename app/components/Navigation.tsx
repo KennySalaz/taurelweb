@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../styles/navigation.css";
 import logo from "../assets/logo.png";
+import JobModal from "./JobModal";
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+  const [jobModalOpen, setJobModalOpen] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
@@ -23,8 +24,12 @@ const Navigation = () => {
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
-
+const openJobModal = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setJobModalOpen(true);
+  };
   return (
+    <>
     <motion.header
       className={`navigation ${scrolled ? "scrolled" : ""}`}
       initial={{ y: -100 }}
@@ -59,7 +64,7 @@ const Navigation = () => {
 
         {/* Special Links */}
         <div className="special-links">
-          <a href="#" className="login-link">Empleo</a>
+         <a href="#" className="login-link" onClick={openJobModal}>Empleo</a>
           <a href="#" className="track-link">Rastrea tu embarque</a>
         </div>
 
@@ -93,6 +98,8 @@ const Navigation = () => {
         </div>
       </div>
     </motion.header>
+     <JobModal isOpen={jobModalOpen} onClose={() => setJobModalOpen(false)} />
+    </>
   );
 };
 

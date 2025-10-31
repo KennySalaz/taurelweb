@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import AnimatedElement from "../components/AnimatedElement";
 import "../styles/servicios.css";
 import imageMap from "../assets/maps.png";
@@ -6,6 +7,11 @@ import hexagonos from "../assets/hexagonos.png";
 import heaxogono3 from "../assets/Hexagonos 3.png";
 import hexagonoBgLeft from "../assets/Hexagonos 4.png";
 import hexagonoBgRight from "../assets/Hexagonos 9.png";
+import servicioImg from "../assets/servicio-img-1.png";
+import servicioImg2 from "../assets/servicio-img-2.png";
+import servicioImg3 from "../assets/servicio-img-3.png";
+import servicioImg4 from "../assets/servicio-img-4.png";
+import hexagono14 from "../assets/Hexagonos 14.png";
 
 export function meta() {
   return [
@@ -26,14 +32,17 @@ export default function Servicios() {
       </div>
       {/* Asesoría Técnica */}
       <section className="advisory-section section">
-          <img
-              src={heaxogono3}
-              alt="Hexágonos decorativos"
-              className="hexagonos-decorativos"
-            />
+        <motion.img
+          src={heaxogono3}
+          alt="Hexágonos decorativos"
+          className="hexagonos-decorativos"
+          whileHover={{
+            scale: 1.05,
+          }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        />
         <div className="container">
           <div className="service-content-wrapper">
-          
             <AnimatedElement
               animation="fadeLeft"
               className="service-text-content"
@@ -67,12 +76,20 @@ export default function Servicios() {
               animation="fadeRight"
               className="service-image-content"
             >
-              <div className="hexagon-image-container">
-                <img
-                  src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+              <motion.div
+                className="hexagon-image-container"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <motion.img
+                  src={servicioImg}
                   alt="Asesoría técnica - Reunión de negocios"
+                  whileHover={{
+                    scale: 1.1,
+                  }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
                 />
-              </div>
+              </motion.div>
             </AnimatedElement>
           </div>
         </div>
@@ -82,138 +99,163 @@ export default function Servicios() {
       <section className="international-transport-section section">
         <div className="container">
           <div className="service-content-wrapper reverse">
+            <div>
+              <AnimatedElement
+                animation="fadeRight"
+                className="service-text-content"
+              >
+                <div className="service-icon-title">
+                  <img
+                    style={{ width: "40px", height: "40px" }}
+                    src={hexagonIcon}
+                    alt=""
+                  />
+                  <h2>Transporte de Carga Internacional:</h2>
+                </div>
+                <p className="service-highlight">
+                  <em>
+                    Llegamos a más de 180 países del mundo, lo que nos permite
+                    ofrecerte:
+                  </em>
+                </p>
+                <ul className="service-list">
+                  <li>Cobertura en todos los continentes.</li>
+                  <li>
+                    Servicios consolidados aéreos, marítimos y multimodal.
+                  </li>
+                  <li>
+                    Servicio de contenedores completos (FCL) y carga fraccionada
+                    (LCL).
+                  </li>
+                  <li>
+                    Transporte terrestre internacional en furgones completos
+                    (FTL) y fraccionados (LTL).
+                  </li>
+                </ul>
+              </AnimatedElement>
+              <div
+                className="service-content-wrapper"
+                style={{ paddingLeft: "30px" }}
+              >
+                <AnimatedElement
+                  animation="fadeLeft"
+                  className="service-text-content"
+                >
+                  <div className="service-icon-title">
+                    <img
+                      style={{ width: "40px", height: "40px" }}
+                      src={hexagonIcon}
+                      alt=""
+                    />
+                    <h2>Transporte Terrestre:</h2>
+                  </div>
+                  <p className="service-description">
+                    De manera eficiente, segura e integrada, colocamos a tu
+                    disposición el servicio de flete terrestre nacional, a fin
+                    de garantizar que tus cargas lleguen a tiempo en el lugar
+                    exacto, bajo el cuidado de la misma empresa, con los
+                    controles y estándares de calidad.
+                  </p>
+                </AnimatedElement>
+              </div>
+            </div>
             <AnimatedElement
               animation="fadeLeft"
               className="service-image-content"
             >
-              <div className="hexagon-image-container">
-                <div className="geometric-elements">
-                  <div className="hexagon-accent"></div>
-                  <div className="hexagon-accent small"></div>
-                </div>
-                <img
-                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+              <motion.div
+                className="hexagon-image-container"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <motion.img
+                  src={servicioImg2}
                   alt="Transporte de carga internacional"
+                  whileHover={{
+                    scale: 1.1,
+                  }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
                 />
-              </div>
-            </AnimatedElement>
-
-            <AnimatedElement
-              animation="fadeRight"
-              className="service-text-content"
-            >
-              <div className="service-icon-title">
-                <img
-                  style={{ width: "40px", height: "40px" }}
-                  src={hexagonIcon}
-                  alt=""
-                />
-                <h2>Transporte de Carga Internacional:</h2>
-              </div>
-              <p className="service-highlight">
-                <em>
-                  Llegamos a más de 180 países del mundo, lo que nos permite
-                  ofrecerte:
-                </em>
-              </p>
-              <ul className="service-list">
-                <li>Cobertura en todos los continentes.</li>
-                <li>Servicios consolidados aéreos, marítimos y multimodal.</li>
-                <li>
-                  Servicio de contenedores completos (FCL) y carga fraccionada
-                  (LCL).
-                </li>
-                <li>
-                  Transporte terrestre internacional en furgones completos (FTL)
-                  y fraccionados (LTL).
-                </li>
-              </ul>
-            </AnimatedElement>
-          </div>
-        </div>
-      </section>
-
-      {/* Transporte Terrestre */}
-      <section className="ground-transport-section section">
-        <div className="container">
-          <div
-            className="service-content-wrapper"
-            style={{ paddingLeft: "30px" }}
-          >
-            <AnimatedElement
-              animation="fadeLeft"
-              className="service-text-content"
-            >
-              <div className="service-icon-title">
-                <img
-                  style={{ width: "40px", height: "40px" }}
-                  src={hexagonIcon}
-                  alt=""
-                />
-                <h2>Transporte Terrestre:</h2>
-              </div>
-              <p className="service-description">
-                De manera eficiente, segura e integrada, colocamos a tu
-                disposición el servicio de flete terrestre nacional, a fin de
-                garantizar que tus cargas lleguen a tiempo en el lugar exacto,
-                bajo el cuidado de la misma empresa, con los controles y
-                estándares de calidad.
-              </p>
+              </motion.div>
             </AnimatedElement>
           </div>
         </div>
       </section>
 
       {/* Almacenamiento y Distribución / Servicios Navieros */}
+
       <section className="storage-maritime-section section">
+        <div className="bg-asolute-heaxogono14">
+          <motion.img src={hexagono14} alt="Mapa mundial" />
+        </div>
         <div className="container">
           <div className="storage-maritime-content">
-            {/* Imagen de fondo con mapa */}
             <div className="map-background">
-              <img src={imageMap} alt="Mapa mundial" />
+              <motion.img src={imageMap} alt="Mapa mundial" />
             </div>
 
             {/* Almacenamiento y Distribución */}
-            <AnimatedElement
-              animation="fadeUp"
-              delay={0.1}
-              className="storage-section"
-            >
-              <div className="service-icon-title">
-                <img
-                  style={{ width: "40px", height: "40px" }}
-                  src={hexagonIcon}
-                  alt=""
-                />
-                <h2>Almacenamiento y Distribución:</h2>
-              </div>
+            <div className="service-content-wrapper">
+              <AnimatedElement
+                animation="fadeUp"
+                delay={0.1}
+                className="storage-section"
+              >
+                <div className="service-icon-title">
+                  <img
+                    style={{ width: "40px", height: "40px" }}
+                    src={hexagonIcon}
+                    alt=""
+                  />
+                  <h2>Almacenamiento y Distribución:</h2>
+                </div>
 
-              <p className="service-description">
-                <strong>Compras Internacionales:</strong> Ponemos a tu
-                disposición un equipo capacitado y de alto rendimiento que te
-                guiará en cada paso durante todo el proceso, desde donde
-                realizar tus compras hasta colocarlo en la puerta de tu fábrica.
-                Cubriendo demanda desde Asia hasta Latinoamérica.
-              </p>
+                <p className="service-description">
+                  <strong>Compras Internacionales:</strong> Ponemos a tu
+                  disposición un equipo capacitado y de alto rendimiento que te
+                  guiará en cada paso durante todo el proceso, desde donde
+                  realizar tus compras hasta colocarlo en la puerta de tu
+                  fábrica. Cubriendo demanda desde Asia hasta Latinoamérica.
+                </p>
 
-              <ul className="service-list">
-                <li>
-                  Soluciones integrales en compras y logísticas, con envíos
-                  aéreos y marítimos.
-                </li>
-                <li>
-                  Consolidación de carga, sin importar el tamaño y ubicación.
-                </li>
-                <li>
-                  Networking, investigación de mercado para importación y
-                  exportación.
-                </li>
-                <li>
-                  Envío de carga desde Miami a Venezuela, haciendo entrega en
-                  almacenes u oficinas.
-                </li>
-              </ul>
-            </AnimatedElement>
+                <ul className="service-list">
+                  <li>
+                    Soluciones integrales en compras y logísticas, con envíos
+                    aéreos y marítimos.
+                  </li>
+                  <li>
+                    Consolidación de carga, sin importar el tamaño y ubicación.
+                  </li>
+                  <li>
+                    Networking, investigación de mercado para importación y
+                    exportación.
+                  </li>
+                  <li>
+                    Envío de carga desde Miami a Venezuela, haciendo entrega en
+                    almacenes u oficinas.
+                  </li>
+                </ul>
+              </AnimatedElement>
+              <AnimatedElement
+                animation="fadeLeft"
+                className="service-image-content"
+              >
+                <motion.div
+                  className="hexagon-image-container"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                  <motion.img
+                    src={servicioImg3}
+                    alt="Transporte de carga internacional"
+                    whileHover={{
+                      scale: 1.1,
+                    }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                  />
+                </motion.div>
+              </AnimatedElement>
+            </div>
 
             {/* Servicios Navieros */}
             <AnimatedElement
@@ -281,10 +323,38 @@ export default function Servicios() {
 
       {/* Agenciamiento Aduana */}
       <section className="customs-agency-section section">
-        <img src={hexagonoBgLeft} alt="" className="hexagono-bg left" />
-        <img src={hexagonoBgRight} alt="" className="hexagono-bg right" />
-        <div className="container">
-          <div className="service-content-wrapper">
+       
+        <motion.img
+          src={hexagonoBgRight}
+          alt=""
+          className="hexagono-bg right"
+          whileHover={{
+            scale: 1.1,
+            rotate: -5,
+          }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        />
+        <div>
+          <div className="service-content-wrapper service-content-wrapper-edit">
+            <AnimatedElement
+              animation="fadeRight"
+              className="service-image-content"
+            >
+              <motion.div
+                className="hexagon-image-container"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <motion.img
+                  src={servicioImg4}
+                  alt="Agenciamiento Aduana - Puerto y contenedores"
+                  whileHover={{
+                    scale: 1.1,
+                  }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                />
+              </motion.div>
+            </AnimatedElement>
             <AnimatedElement
               animation="fadeLeft"
               className="service-text-content"
@@ -308,21 +378,7 @@ export default function Servicios() {
               </p>
             </AnimatedElement>
 
-            <AnimatedElement
-              animation="fadeRight"
-              className="service-image-content"
-            >
-              <div className="hexagon-image-container">
-                <div className="geometric-elements-left">
-                  <div className="hexagon-accent-left"></div>
-                  <div className="hexagon-accent-left small"></div>
-                </div>
-                <img
-                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-                  alt="Agenciamiento Aduana - Puerto y contenedores"
-                />
-              </div>
-            </AnimatedElement>
+            
           </div>
         </div>
       </section>

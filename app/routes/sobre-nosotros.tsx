@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import TopBrandsSlider from "../components/TopBrandsSlider";
 import AboutUsSlider from "../components/AboutUsSlider";
+import ChambersSlider from "../components/ChambersSlider";
 import CertificationModal from "../components/CertificationModal";
 import imageG1 from "../assets/package-nosotros/Logo camara de comercio 1.png";
 import imageG2 from "../assets/package-nosotros/Logo camara de comercio 2.png";
@@ -34,11 +35,13 @@ import backgroundHexRight from "../assets/Hexagonos 2.png";
 import isoLogo from "../assets/Logo-ISO.png";
 import fondonormaLogo from "../assets/brillante _FONDONORMA_ 1.png";
 
-
 export function meta() {
   return [
     { title: "Sobre Nosotros - Taurel" },
-    { name: "description", content: "Conoce más sobre Taurel, nuestra historia, valores y equipo" },
+    {
+      name: "description",
+      content: "Conoce más sobre Taurel, nuestra historia, valores y equipo",
+    },
   ];
 }
 
@@ -75,8 +78,7 @@ export default function SobreNosotros() {
     {
       icon: imageEmpresa5,
       titulo: "Innovación",
-      texto:
-        "Pensamos diferente y encontramos nuevas formas de generar valor.",
+      texto: "Pensamos diferente y encontramos nuevas formas de generar valor.",
     },
     {
       icon: imageEmpresa6,
@@ -105,15 +107,17 @@ export default function SobreNosotros() {
     { nombre: "ASOCAV", slug: imageG15 },
     { nombre: "Colegio de Ingenieros", slug: imageG16 },
     { nombre: "Cámara de Comercio Colombo Venezolana", slug: imageG17 },
-    { nombre: "Cámara de Comercio e Industria Venezolano Italiana", slug: imageG18 },
+    {
+      nombre: "Cámara de Comercio e Industria Venezolano Italiana",
+      slug: imageG18,
+    },
   ];
 
   return (
     <div className="sobre-nosotros-page">
       {/* About Us Slider */}
       <AboutUsSlider />
-      
-      {/* Banner superior con marcas aliadas */}
+
       <TopBrandsSlider />
       {/* Sección de Valores */}
       <section className="values-section section">
@@ -150,32 +154,17 @@ export default function SobreNosotros() {
       <section className="chambers-section section">
         <div className="container">
           <div className="section-title">
-            <h2 className="uppercase">Participación activa en gremios y cámaras</h2>
-            <p className="chambers-subtitle">Ofrecemos mucho más que logística</p>
-          </div>
-
-          <div className="chambers-grid">
-            {gremios.map((g) => (
-              <div key={g.slug} className="chamber-item" title={g.nombre}>
-                {/* La imagen se mostrará si existe en /public/logos/{slug}.png */}
-                <img
-                  src={g.slug}
-                  alt={g.nombre}
-                  loading="lazy"
-                  onError={(e) => {
-                    const img = e.currentTarget;
-                    img.style.display = "none";
-                    const placeholder = img.nextElementSibling as HTMLElement | null;
-                    if (placeholder) placeholder.style.display = "flex";
-                  }}
-                />
-                <span className="logo-placeholder" aria-hidden>
-                  {g.nombre}
-                </span>
-              </div>
-            ))}
+            <h2 className="uppercase">
+              Participación activa en gremios y cámaras
+            </h2>
+            <p className="chambers-subtitle">
+              Ofrecemos mucho más que logística
+            </p>
           </div>
         </div>
+        
+        {/* Slider de Cámaras y Gremios */}
+        <ChambersSlider chambers={gremios} />
       </section>
 
       {/* Sección de Certificaciones */}

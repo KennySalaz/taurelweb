@@ -29,10 +29,13 @@
   position: relative;
   z-index: 2;
 }
+.service-content-wrapper-edit {
+  grid-template-columns: 1fr 2fr !important;
+}
 
 .service-content-wrapper.reverse {
   direction: rtl;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 3fr 1fr;
 }
 .hexagonos-decorativos {
   position: absolute;
@@ -40,6 +43,8 @@
   left: 0;
   height: 50%;
   z-index: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .service-content-wrapper.reverse > * {
   direction: ltr;
@@ -120,24 +125,31 @@
 .hexagon-image-container {
   position: relative;
   width: 100%;
-  max-width: 300px;
+  height: 30vh;
+  /*   max-width: 300px; */
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .hexagon-image-container img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain;
   border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
   aspect-ratio: 4/3;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hexagon-image-container img:hover {
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
 }
 
 /* Transporte de Carga Internacional y Terrestre */
 .international-transport-section {
   background-color: #f8faff;
   padding: 20px 70px;
-  box-shadow: 2px 0px 13px -9px #000000;
+  box-shadow: 2px 0px 13px -12px #000000;
   margin-top: 20px;
 }
 
@@ -213,6 +225,8 @@
   height: 100%;
   object-fit: contain;
   object-position: center;
+  transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .storage-section,
@@ -250,17 +264,20 @@
 }
 .hexagono-bg {
   position: absolute;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .hexagono-bg.left {
   bottom: 10%;
-  left: -50px;
+  left: 0px;
   width: 100px;
   height: auto;
 }
 .hexagono-bg.right {
   top: 0%;
   height: auto;
+  right: 0;
 }
 
 .service-sublist li::before {
@@ -282,6 +299,10 @@
 
   .service-content-wrapper.reverse {
     direction: ltr;
+    grid-template-columns: 1fr;
+  }
+  .service-content-wrapper-edit {
+    grid-template-columns: 1fr !important;
   }
 
   .service-icon-title {
