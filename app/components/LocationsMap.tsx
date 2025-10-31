@@ -208,7 +208,7 @@ const LocationsMap: React.FC<LocationsMapProps> = ({ apiKey, locations, onSelect
           )}
         </div>
 
-        <div className="map-container" ref={mapRef}></div>
+        <div className="map-container"  ref={mapRef}></div>
       </div>
     </div>
   );

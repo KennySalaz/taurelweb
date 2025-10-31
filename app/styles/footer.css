@@ -410,6 +410,9 @@
     width: 35px;
     height: 35px;
   }
+  .quick-form{
+    align-items: center;
+  }
 }
 
 @media (max-width: 576px) {

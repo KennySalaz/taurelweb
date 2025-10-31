@@ -73,13 +73,12 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
           onClick={onClose}
         >
           <motion.div
-            className="modal-content"
+            className="modal-content size-job"
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 50 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
-            style={{height:"80%", maxWidth: '70%'}}
           >
             <img style={{ position:"absolute" , bottom:"0", left:"0", width:"35%"}} src={haxgonal} alt="Hexagonos" />
             <button className="modal-close" onClick={onClose}>

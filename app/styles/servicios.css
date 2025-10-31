@@ -141,10 +141,6 @@
   cursor: pointer;
 }
 
-.hexagon-image-container img:hover {
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
-}
-
 /* Transporte de Carga Internacional y Terrestre */
 .international-transport-section {
   background-color: #f8faff;
@@ -166,7 +162,11 @@
   right: -20px;
   z-index: 1;
 }
-
+.logistics-flow-container {
+  width: 100%;
+  height: 35vh;
+  position: relative;
+}
 .hexagon-accent {
   width: 60px;
   height: 69px;
@@ -453,9 +453,12 @@
 }
 
 .logistics-flow-background {
+  position: absolute;
+  left: 0;
   width: 100%;
-  height: 35vh;
-  background-image: url("../assets/flow-send.png");
+  height: 200%;
+  top: -200px;
+  background-image: url(/app/assets/flow-send.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

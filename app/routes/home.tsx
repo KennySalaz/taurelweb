@@ -497,7 +497,8 @@ export default function Home() {
               whileHover={{
                 opacity: 0.8,
                 scale: 1.05,
-                filter: "brightness(1.1) drop-shadow(0 0 12px rgba(26, 144, 206, 0.4))",
+                filter:
+                  "brightness(1.1) drop-shadow(0 0 12px rgba(26, 144, 206, 0.4))",
               }}
             />
             <motion.div
@@ -514,7 +515,8 @@ export default function Home() {
                 opacity: 0.8,
                 scale: 1.05,
                 rotate: 5,
-                filter: "brightness(1.1) drop-shadow(0 0 12px rgba(26, 144, 206, 0.4))",
+                filter:
+                  "brightness(1.1) drop-shadow(0 0 12px rgba(26, 144, 206, 0.4))",
               }}
             />
           </div>

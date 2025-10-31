@@ -3,9 +3,7 @@ import AnimatedElement from "../components/AnimatedElement";
 import "../styles/servicios.css";
 import imageMap from "../assets/maps.png";
 import hexagonIcon from "../assets/arrow-right.png";
-import hexagonos from "../assets/hexagonos.png";
 import heaxogono3 from "../assets/Hexagonos 3.png";
-import hexagonoBgLeft from "../assets/Hexagonos 4.png";
 import hexagonoBgRight from "../assets/Hexagonos 9.png";
 import servicioImg from "../assets/servicio-img-1.png";
 import servicioImg2 from "../assets/servicio-img-2.png";
@@ -133,10 +131,7 @@ export default function Servicios() {
                   </li>
                 </ul>
               </AnimatedElement>
-              <div
-                className="service-content-wrapper"
-                style={{ paddingLeft: "30px" }}
-              >
+              <div className="service-content-wrapper">
                 <AnimatedElement
                   animation="fadeLeft"
                   className="service-text-content"
@@ -323,7 +318,6 @@ export default function Servicios() {
 
       {/* Agenciamiento Aduana */}
       <section className="customs-agency-section section">
-       
         <motion.img
           src={hexagonoBgRight}
           alt=""
@@ -377,8 +371,6 @@ export default function Servicios() {
                 presencia.
               </p>
             </AnimatedElement>
-
-            
           </div>
         </div>
       </section>
@@ -391,9 +383,10 @@ export default function Servicios() {
               <h2>NUESTRA CADENA LOGÍSTICA...</h2>
             </div>
           </AnimatedElement>
-
           <AnimatedElement animation="fadeUp" delay={0.2}>
-            <div className="logistics-flow-background"></div>
+            <div className="logistics-flow-container">
+              <div className="logistics-flow-background"></div>
+            </div>
           </AnimatedElement>
         </div>
       </section>

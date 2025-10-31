@@ -416,7 +416,7 @@ export default function Contactanos() {
               </p>
             </div>
 
-            <div className="map-container">
+            <div className="map-container" style={{ boxShadow: "none" }}>
               <div className="map-wrapper">
                 <LocationsFinder googleMapsApiKey="dfsfsdfsdfs" />
               </div>
