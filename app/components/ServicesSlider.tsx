@@ -23,7 +23,7 @@ export default function ServicesSlider({ className = '' }: ServicesSliderProps) 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev === 0 ? 1 : 0));
-    }, 3000); // Cambia cada 3 segundos
+    }, 7000); // Cambia cada 7 segundos
 
     return () => clearInterval(interval);
   }, []);

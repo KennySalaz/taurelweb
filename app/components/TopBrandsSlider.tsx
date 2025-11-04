@@ -33,7 +33,7 @@ const TopBrandsSlider: React.FC = () => {
           <motion.div
             className="brands-slider-track"
             animate={{ x: [0, -100 * BRANDS.length] }}
-            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
           >
             {duplicated.map((b, i) => (
               <div key={`${b.slug}-${i}`} className="brand-logo-item">

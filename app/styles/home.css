@@ -451,7 +451,6 @@
 .timeline-section {
   background-color: white;
   overflow: hidden;
-  margin-bottom: 10px;
   box-shadow: 0px 20px 14px -21px #00000030;
 }
 
@@ -528,7 +527,7 @@
 /* Certifications */
 .certifications {
   background-color: white;
-  padding: 0px;
+  padding: 20px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -560,8 +559,8 @@
 } */
 
 .cert-logo {
-  height: 136px;
-  width: 136px;
+  height: 100px;
+  width: 126px;
   object-fit: contain;
 }
 
