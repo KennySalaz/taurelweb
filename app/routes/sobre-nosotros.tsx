@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLanguage } from "~/contexts/LanguageContext";
 import "../styles/sobre-nosotros.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
@@ -46,6 +47,7 @@ export function meta() {
 }
 
 export default function SobreNosotros() {
+  const { t } = useLanguage();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -54,37 +56,33 @@ export default function SobreNosotros() {
   const valores = [
     {
       icon: imageEmpresa1,
-      titulo: "Pasión por el Servicio",
-      texto:
-        "Nos mueve el entusiasmo por ayudarle y convertir cada reto en una solución.",
+      titulo: t('aboutUs.values.value1.title'),
+      texto: t('aboutUs.values.value1.text'),
     },
     {
       icon: imageEmpresa2,
-      titulo: "Respeto e Inclusión",
-      texto:
-        "Creemos en la diversidad y valoramos a cada persona que forma parte de nuestro camino.",
+      titulo: t('aboutUs.values.value2.title'),
+      texto: t('aboutUs.values.value2.text'),
     },
     {
       icon: imageEmpresa3,
-      titulo: "Ética y Calidad",
-      texto:
-        "Hacemos lo correcto y buscamos siempre superar los más altos estándares.",
+      titulo: t('aboutUs.values.value3.title'),
+      texto: t('aboutUs.values.value3.text'),
     },
     {
       icon: imageEmpresa4,
-      titulo: "Compromiso",
-      texto: "Honramos nuestra palabra y cumplimos lo que ofrecemos.",
+      titulo: t('aboutUs.values.value4.title'),
+      texto: t('aboutUs.values.value4.text'),
     },
     {
       icon: imageEmpresa5,
-      titulo: "Innovación",
-      texto: "Pensamos diferente y encontramos nuevas formas de generar valor.",
+      titulo: t('aboutUs.values.value5.title'),
+      texto: t('aboutUs.values.value5.text'),
     },
     {
       icon: imageEmpresa6,
-      titulo: "Optimización",
-      texto:
-        "Perfeccionamos procesos de manera constante para alcanzar mejores resultados.",
+      titulo: t('aboutUs.values.value6.title'),
+      texto: t('aboutUs.values.value6.text'),
     },
   ];
 
@@ -124,13 +122,10 @@ export default function SobreNosotros() {
         <div className="container">
           <div className="values-header">
             <h3>
-              En nuestra empresa, construimos cada logro sobre una base firme de
-              valores.
+              {t('aboutUs.values.header')}
             </h3>
             <p className="values-subtitle">
-              Ellos son la brújula que guía nuestras decisiones, impulsan
-              nuestro crecimiento y reflejan la esencia de nuestra cultura
-              organizacional.
+              {t('aboutUs.values.subtitle')}
             </p>
           </div>
 
@@ -155,10 +150,10 @@ export default function SobreNosotros() {
         <div className="container">
           <div className="section-title">
             <h2 className="uppercase">
-              Participación activa en gremios y cámaras
+              {t('aboutUs.chambers.title')}
             </h2>
             <p className="chambers-subtitle">
-              Ofrecemos mucho más que logística
+              {t('aboutUs.chambers.subtitle')}
             </p>
           </div>
         </div>
@@ -181,7 +176,7 @@ export default function SobreNosotros() {
             onClick={openModal}
             className="cert-title"
           >
-            Certificación ISO 9001:2025
+            {t('home.certification.title')}
           </motion.h3>
           <img
             src={fondonormaLogo}

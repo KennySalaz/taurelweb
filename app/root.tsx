@@ -14,6 +14,7 @@ import "./styles/global.css";
 // Importamos componentes de navegación y footer
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -48,13 +49,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <>
+    <LanguageProvider>
       <Navigation />
       <main className="page-content">
         <Outlet />
       </main>
       <Footer />
-    </>
+    </LanguageProvider>
   );
 }
 

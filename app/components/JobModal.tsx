@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "~/contexts/LanguageContext";
 import "../styles/certification-modal.css";
 import haxgonal from "../assets/Hexagonosmodal.png";
 
@@ -9,6 +10,7 @@ interface JobModalProps {
 }
 
 const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
+  const { t } = useLanguage();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [form, setForm] = useState({
@@ -26,15 +28,15 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
   const validate = () => {
     const newErrors: { [key: string]: string } = {};
     if (!form.nombre.trim())
-      newErrors.nombre = "Nombre y Apellido es requerido";
-    if (!form.pais.trim()) newErrors.pais = "País es requerido";
-    if (!form.ciudad.trim()) newErrors.ciudad = "Ciudad es requerido";
+      newErrors.nombre = t('modals.job.errors.nameRequired');
+    if (!form.pais.trim()) newErrors.pais = t('modals.job.errors.countryRequired');
+    if (!form.ciudad.trim()) newErrors.ciudad = t('modals.job.errors.cityRequired');
     if (!form.correo.trim()) {
-      newErrors.correo = "Correo electrónico es requerido";
+      newErrors.correo = t('modals.job.errors.emailRequired');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.correo)) {
-      newErrors.correo = "Correo electrónico inválido";
+      newErrors.correo = t('modals.job.errors.emailInvalid');
     }
-    if (!form.mensaje.trim()) newErrors.mensaje = "Mensaje es requerido";
+    if (!form.mensaje.trim()) newErrors.mensaje = t('modals.job.errors.messageRequired');
     return newErrors;
   };
 
@@ -116,7 +118,7 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
                   paddingBottom: "8px",
                 }}
               >
-                Empleo
+                {t('modals.job.title')}
               </h2>
             </div>
             <div style={{ padding: "40px" }}>
@@ -128,8 +130,7 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
                   fontWeight: 500,
                 }}
               >
-                Queremos saber más de ti, envíanos tus datos y nos pondremos en
-                contacto pronto.
+                {t('modals.job.description')}
               </p>
               <form
                 className="job-form"
@@ -145,7 +146,7 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
                   <input
                     type="text"
                     name="nombre"
-                    placeholder="Nombre y Apellido"
+                    placeholder={t('modals.job.namePlaceholder')}
                     className="job-input"
                     style={{
                       padding: "14px",
@@ -169,7 +170,7 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
                     <input
                       type="text"
                       name="pais"
-                      placeholder="País"
+                      placeholder={t('modals.job.countryPlaceholder')}
                       className="job-input"
                       style={{
                         padding: "14px",
@@ -192,7 +193,7 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
                     <input
                       type="text"
                       name="ciudad"
-                      placeholder="Ciudad"
+                      placeholder={t('modals.job.cityPlaceholder')}
                       className="job-input"
                       style={{
                         padding: "14px",
@@ -217,7 +218,7 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
                     <input
                       type="email"
                       name="correo"
-                      placeholder="Correo electrónico"
+                      placeholder={t('modals.job.emailPlaceholder')}
                       className="job-input"
                       style={{
                         padding: "14px",
@@ -288,7 +289,7 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
                         />
                       </defs>
                     </svg>
-                    Adjunte su CV
+                    {t('modals.job.attachCV')}
                     <input
                       type="file"
                       id="cv-upload"
@@ -301,7 +302,7 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
                 <div>
                   <textarea
                     name="mensaje"
-                    placeholder="Mensaje"
+                    placeholder={t('modals.job.messagePlaceholder')}
                     className="job-input"
                     style={{
                       padding: "14px",
@@ -343,7 +344,7 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
                       cursor: "pointer",
                     }}
                   >
-                    Enviar
+                    {t('modals.job.sendButton')}
                   </button>
                 </div>
                 {submitted && (
@@ -354,7 +355,7 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
                       marginTop: "10px",
                     }}
                   >
-                    ¡Formulario enviado correctamente!
+                    {t('modals.job.successMessage')}
                   </div>
                 )}
               </form>

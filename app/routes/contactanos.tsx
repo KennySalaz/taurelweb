@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLanguage } from "~/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import AnimatedElement from "../components/AnimatedElement";
 import "../styles/contactanos.css";
@@ -27,6 +28,7 @@ export function meta() {
 }
 
 export default function Contactanos() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     solicitud: "",
     nombre: "",
@@ -107,29 +109,29 @@ export default function Contactanos() {
     switch (name) {
       case "solicitud":
         if (!value.trim()) {
-          error = "Por favor, indique su solicitud o requerimiento";
+          error = t('contact.errors.requestRequired');
         }
         break;
       case "nombre":
         if (!value.trim()) {
-          error = "El nombre y apellido es requerido";
+          error = t('contact.errors.nameRequired');
         }
         break;
       case "email":
         if (!value.trim()) {
-          error = "El correo electrónico es requerido";
+          error = t('contact.errors.emailRequired');
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-          error = "Por favor, ingrese un correo electrónico válido";
+          error = t('contact.errors.emailInvalid');
         }
         break;
       case "telefono":
         if (!value.trim()) {
-          error = "El número de teléfono es requerido";
+          error = t('contact.errors.phoneRequired');
         }
         break;
       case "empresa":
         if (!value.trim()) {
-          error = "El nombre de la empresa es requerido";
+          error = t('contact.errors.companyRequired');
         }
         break;
     }
@@ -207,10 +209,10 @@ export default function Contactanos() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <h1>Contáctanos</h1>
+            <h1>{t('contact.title')}</h1>
           </motion.div>
 
-          <div className="taurel-contact-content">
+         {/*  <div className="taurel-contact-content">
             <div className="taurel-contact-columns">
               <div className="taurel-contact-locations-container">
                 <div className="taurel-contact-left-column">
@@ -254,7 +256,7 @@ export default function Contactanos() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -279,11 +281,9 @@ export default function Contactanos() {
             transition={{ duration: 0.8 }}
           >
             <div className="form-header">
-              <h2>¿Cómo podemos ayudarte?</h2>
+              <h2>{t('contact.formTitle')}</h2>
               <p>
-                Si tiene alguna pregunta sobre Taurel o puede cómo podemos
-                ayudar con cualquier asunto relacionado con logística, póngase
-                en contacto con nuestra gente de atendimiento.
+                {t('contact.formDescription')}
               </p>
             </div>
 
@@ -295,7 +295,7 @@ export default function Contactanos() {
                   value={formData.solicitud}
                   onChange={handleInputChange}
                   className={`input-white ${errors.solicitud ? "input-error" : ""}`}
-                  placeholder="Indique su solicitud o requerimiento..."
+                  placeholder={t('contact.requestPlaceholder')}
                   required
                 />
                 {errors.solicitud && (
@@ -311,7 +311,7 @@ export default function Contactanos() {
                     value={formData.nombre}
                     onChange={handleInputChange}
                     className={errors.nombre ? "input-error" : ""}
-                    placeholder="Nombre y Apellido"
+                    placeholder={t('contact.namePlaceholder')}
                     required
                   />
                   {errors.nombre && (
@@ -325,7 +325,7 @@ export default function Contactanos() {
                     value={formData.email}
                     onChange={handleInputChange}
                     className={errors.email ? "input-error" : ""}
-                    placeholder="Correo Electrónico"
+                    placeholder={t('contact.emailPlaceholder')}
                     required
                   />
                   {errors.email && (
@@ -342,7 +342,7 @@ export default function Contactanos() {
                     value={formData.telefono}
                     onChange={handleInputChange}
                     className={errors.telefono ? "input-error" : ""}
-                    placeholder="Número de teléfono"
+                    placeholder={t('contact.phonePlaceholder')}
                     required
                   />
                   {errors.telefono && (
@@ -356,7 +356,7 @@ export default function Contactanos() {
                     value={formData.empresa}
                     onChange={handleInputChange}
                     className={errors.empresa ? "input-error" : ""}
-                    placeholder="Empresa"
+                    placeholder={t('contact.companyPlaceholder')}
                     required
                   />
                   {errors.empresa && (
@@ -370,7 +370,7 @@ export default function Contactanos() {
                 className={`btn-send ${!isFormValid ? "btn-disabled" : ""}`}
                 disabled={!isFormValid || isSubmitting}
               >
-                {isSubmitting ? "Enviando..." : "Enviar"}
+                {isSubmitting ? t('contact.sendingButton') : t('contact.sendButton')}
               </button>
             </form>
           </motion.div>
@@ -409,10 +409,9 @@ export default function Contactanos() {
             transition={{ duration: 0.8 }}
           >
             <div className="map-header">
-              <h2>Taurel va a donde tú estés</h2>
+              <h2>{t('contact.mapTitle')}</h2>
               <p>
-                Tu destino fácil de encontrar, visitanos en la ubicación de
-                preferencia
+                {t('contact.mapSubtitle')}
               </p>
             </div>
 
@@ -423,8 +422,8 @@ export default function Contactanos() {
 
               <div className="office-hours">
                 <p>
-                  <strong>Horario de atención: </strong>
-                  Lunes a Viernes. 8:00am - 5:00pm.
+                  <strong>{t('contact.officeHours')}</strong>
+                  {t('contact.officeHoursDetails')}
                 </p>
               </div>
             </div>

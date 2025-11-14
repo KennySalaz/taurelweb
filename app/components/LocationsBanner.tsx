@@ -1,12 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "../styles/locations-banner.css";
+import { useLanguage } from "../contexts/LanguageContext";
 
 // Importar assets
-import taurelLogo from "../assets/logo2.png";
+import taurelLogo from "../assets/logo.png";
 import mapVenezuela from "../assets/mappoints.png";
 import tuerca from "../assets/IMG_7051.png";
 const LocationsBanner: React.FC = () => {
+  const { t } = useLanguage();
   const locations = [
     "Caracas, Dtto. Capital.",
     "La Guaira, Edo. Vargas.",
@@ -93,7 +95,7 @@ const LocationsBanner: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              Impulsamos tu negocio de principio a fin.
+              {t("locationsBanner.tagline")}
             </motion.h2>
           </motion.div>
 

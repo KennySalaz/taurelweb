@@ -75,6 +75,7 @@
   transition: opacity 0.3s ease;
   z-index: 1;
   background-color: var(--primary-blue);
+  box-shadow: inset 0px 1px 11px -4px black;
 }
 
 .desktop-nav li:hover::before {
@@ -124,6 +125,7 @@
   transition: opacity 0.3s ease;
   z-index: -1;
   background-color: var(--primary-blue);
+  box-shadow: inset 0px 1px 11px -4px black;
 }
 
 .special-links a:hover::before {
@@ -239,11 +241,12 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  transition: color 0.3s ease;
-  padding: 0;
+  transition: all 0.3s ease;
+  padding: 0 0 4px 0;
   margin: 0;
   position: relative;
   z-index: 10;
+  border-bottom: 2px solid transparent;
 }
 
 .header-lang-compact .lang-header-active::before,
@@ -252,12 +255,15 @@
 }
 
 .header-lang-compact .lang-header-active {
-  font-weight: 600;
+  font-weight: 700;
+  border-bottom: 2px solid white;
+  border-radius: 0 !important;
 }
 
 .header-lang-compact .lang-header-inactive:hover {
   color: rgba(255, 255, 255, 0.7);
   background: none !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .header-lang-compact .lang-sep {
@@ -324,10 +330,18 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
+  transition: all 0.3s ease;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.mobile-lang-content a:hover {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .mobile-lang-content .lang-active {
-  font-weight: 600;
+  font-weight: 700;
+  border-bottom: 2px solid white;
 }
 
 .mobile-lang-content .sep {

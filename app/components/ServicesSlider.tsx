@@ -1,63 +1,66 @@
 import React, { useState, useEffect } from 'react';
-import slide1 from '../assets/home-carousel/1.png';
-import slide2 from '../assets/home-carousel/2.png';
-import slide3 from '../assets/home-carousel/3.png';
-import slide4 from '../assets/home-carousel/4.png';
-import slide5 from '../assets/home-carousel/5.png';
-import slide6 from '../assets/home-carousel/6.png';
-import slide7 from '../assets/home-carousel/7.png';
+import { useLanguage } from '~/contexts/LanguageContext';
+import asesoria from '../assets/home-carousel/aseoria-y-aduanas.png';
+import transporteCarga from '../assets/home-carousel/transportedecarga.png';
+import aduanas from '../assets/home-carousel/aseoria-y-aduanas.png';
+import transporteTerrestre from '../assets/home-carousel/transporteterrestre.png';
+import navieros from '../assets/home-carousel/trasnporte-carga.png';
+import almacenamiento from '../assets/home-carousel/almacenamiento.png';
+import compras from '../assets/home-carousel/compras-internacioles.png';
 
 interface ServicesSliderProps {
   className?: string;
 }
 
-const services = [
-  {
-    title: 'Asesoría Técnica',
-    description: 'Este servicio te ayuda a tramitar permisos para importar, exportar y mover mercancías. Además, ofrece asesoría especializada en aduanas y comercio exterior, basándose en el marco legal del Arancel de Aduanas para que todos los procesos sean correctos.',
-    image: slide1,
-    textAlign: 'left'
-  },
-  {
-    title: 'Agenciamiento Aduanas',
-    description: 'Atendemos las Importaciones, Exportaciones y/o Tránsito de sus embarques, alineados con la cambiante normativa tanto nacional como internacional, contando con oficinas a través de todas las Aduanas habilitadas marítimas, aéreas y terrestres.',
-    image: slide2,
-    textAlign: 'right'
-  },
-  {
-    title: 'Transporte de Carga Internacional',
-    description: 'Llegamos a más de 180 países del mundo, lo que nos permite ofrecerte: Cobertura en todos los continentes, Servicios consolidados aéreos, marítimos y multimodal, Servicio de contenedores completos (FCL) y carga fraccionada (LCL), Transporte terrestre internacional en furgones completos (FTL) y fraccionados (LTL).',
-    image: slide3,
-    textAlign: 'left'
-  },
-  {
-    title: 'Transporte Terrestre',
-    description: 'La empresa ofrece un servicio de flete terrestre nacional para asegurar que tus cargas lleguen a tiempo y de forma segura. Este servicio incluye: Control y calidad en el manejo de la carga. Seguimiento en tiempo real del estado de tu envío a través de su aplicación Servicios en Línea.',
-    image: slide4,
-    textAlign: 'right'
-  },
-  {
-    title: 'Servicios Navieros',
-    description: 'Tenemos una vasta experiencia que nos ha posicionado como agente de confianza en Venezuela para las líneas navieras más importantes del mundo. Actuando como: agente general, portuario, protector, manejo de carga pesada y voluminosa, coordinación de las operaciones de carga y descarga.',
-    image: slide5,
-    textAlign: 'left'
-  },
-  {
-    title: 'Almacenamiento',
-    description: 'Contamos con almacenes equipados y operativos que ofrecen soluciones de embalaje y llenado/vaciado de contenedores. También disponen de un Depósito Aduanero In Bond y se encargan de la gestión completa de la cadena de suministros.',
-    image: slide6,
-    textAlign: 'right'
-  },
-  {
-    title: 'Compras Internacionales',
-    description: 'Ponemos a tu disposición un equipo capacitado y de alto rendimiento que te guiará en cada paso durante todo el proceso, desde donde realizar tus compras hasta colocarlo en la puerta de tu fábrica. Cubriendo demanda desde Asia hasta Latinoamérica.',
-    image: slide7,
-    textAlign: 'left'
-  }
-];
-
 export default function ServicesSlider({ className = '' }: ServicesSliderProps) {
+  const { t } = useLanguage();
   const [activeSlide, setActiveSlide] = useState(0);
+  
+  const services = [
+    {
+      title: t('services.slider.service1.title'),
+      description: t('services.slider.service1.description'),
+      image: asesoria,
+      textAlign: 'left'
+    },
+    {
+      title: t('services.slider.service3.title'),
+      description: t('services.slider.service3.description'),
+      image: transporteCarga,
+      textAlign: 'right'
+    },
+    {
+      title: t('services.slider.service2.title'),
+      description: t('services.slider.service2.description'),
+      image: aduanas,
+      textAlign: 'left'
+    },
+    {
+      title: t('services.slider.service6.title'),
+      description: t('services.slider.service6.description'),
+      image: almacenamiento,
+      textAlign: 'right'
+    },
+    {
+      title: t('services.slider.service4.title'),
+      description: t('services.slider.service4.description'),
+      image: transporteTerrestre,
+      textAlign: 'left'
+    },
+    {
+      title: t('services.slider.service7.title'),
+      description: t('services.slider.service7.description'),
+      image: compras,
+      textAlign: 'right'
+    },
+    {
+      title: t('services.slider.service5.title'),
+      description: t('services.slider.service5.description'),
+      image: navieros,
+      textAlign: 'left'
+    }
+  ];
+  
   const totalSlides = services.length;
 
   const nextSlide = () => {

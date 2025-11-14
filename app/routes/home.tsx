@@ -7,6 +7,7 @@ import ServicesSlider from "../components/ServicesSlider";
 import CertificationModal from "../components/CertificationModal";
 import PartnersSlider from "../components/PartnersSlider";
 import LocationsBanner from "../components/LocationsBanner";
+import { useLanguage } from "../contexts/LanguageContext";
 import "../styles/home.css";
 import hexagonos from "../assets/hexagonos.png";
 import isoLogo from "../assets/Logo-ISO.png";
@@ -32,6 +33,7 @@ export function meta({}: Route.MetaArgs) {
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useLanguage();
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
@@ -65,9 +67,7 @@ export default function Home() {
               transition={{ duration: 1 }}
             >
               <h1>
-                Somos su aliado logístico de principio a fin, comprometidos en
-                cada paso: desde la planificación inicial hasta el destino
-                final.
+                {t('home.hero.title')}
               </h1>
               <motion.button
                 className="cta-button"
@@ -77,7 +77,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Conoce nuestras soluciones
+                {t('home.hero.cta')}
               </motion.button>
             </motion.div>
           </div>
@@ -96,35 +96,35 @@ export default function Home() {
             transition={{ duration: 1 }}
           >
             <p className="stats-title">
-              Taurel: es un legado de 100 años
+              {t('home.stats.title')}
             </p>
             <p className="stats-subtitle">
-              Algunos datos curiosos sobre nuestra compañía
+              {t('home.stats.subtitle')}
             </p>
             <div className="stats-grid">
               <div className="stat-card">
                 <h3>
                   <CountUp end={9} duration={2.5} prefix="+" />
                 </h3>
-                <p>Oficinas a nivel Nacional</p>
+                <p>{t('home.stats.offices')}</p>
               </div>
               <div className="stat-card">
                 <h3>
                   <CountUp end={180} duration={2.8} prefix="+" />
                 </h3>
-                <p>Aliados a nivel global para conectar sus operaciones</p>
+                <p>{t('home.stats.partners')}</p>
               </div>
               <div className="stat-card">
                 <h3>
                   <CountUp end={200} duration={3} prefix="+" />
                 </h3>
-                <p>Colaboradores para satisfacer sus necesidades</p>
+                <p>{t('home.stats.employees')}</p>
               </div>
               <div className="stat-card">
                 <h3>
                   <CountUp end={2000} duration={3.2} prefix="+" />
                 </h3>
-                <p>Clientes que confían en nuestras soluciones innovadoras</p>
+                <p>{t('home.stats.clients')}</p>
               </div>
             </div>
           </motion.div>
@@ -141,7 +141,7 @@ export default function Home() {
         <div className="container">
           <AnimatedElement animation="fadeUp">
             <div className="section-title">
-              <h2>Nuestra Historia, Tu Confianza...</h2>
+              <h2>{t('home.timeline.title')}</h2>
             </div>
           </AnimatedElement>
 
@@ -206,8 +206,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.8 }}
                   viewport={{ once: true }}
                 >
-                  Comenzamos con una pequeña oficina aduanal manejando trámites
-                  portuarios básicos de recepción de mercancías en puerto.
+                  {t('home.timeline.year1911')}
                 </motion.p>
               </motion.div>
 
@@ -258,9 +257,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 1.0 }}
                   viewport={{ once: true }}
                 >
-                  Decidimos expandir nuestras actividades al manejo del
-                  transporte de carga vía marítima, construyendo un edificio
-                  emblemático en La Guaira – Venezuela.
+                  {t('home.timeline.year1945')}
                 </motion.p>
               </motion.div>
 
@@ -313,8 +310,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 1.2 }}
                   viewport={{ once: true }}
                 >
-                  Seleccionados como Agente de Aduanas y Asesor en Materia de
-                  Aduanas del METRO DE CARACAS C.A. durante 4 años (Línea 3).
+                  {t('home.timeline.year1994')}
                 </motion.p>
               </motion.div>
             </div>
@@ -370,8 +366,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.9 }}
                   viewport={{ once: true }}
                 >
-                  Primer Certificado del Servicio de Gestión de la Calidad. Bajo
-                  la norma COVENIN-ISO 9002:1995.
+                  {t('home.timeline.year1999')}
                 </motion.p>
               </motion.div>
 
@@ -424,8 +419,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 1.1 }}
                   viewport={{ once: true }}
                 >
-                  Representación de la naviera ZIM en Venezuela. Desde 2002,
-                  representación exclusiva con la creación de ZIM Venezuela.
+                  {t('home.timeline.year2002')}
                 </motion.p>
               </motion.div>
 
@@ -478,8 +472,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 1.3 }}
                   viewport={{ once: true }}
                 >
-                  Innovamos a nivel tecnológico con la creación de DragOn,
-                  nuestra APP.
+                  {t('home.timeline.year2024')}
                 </motion.p>
               </motion.div>
             </div>
@@ -537,7 +530,7 @@ export default function Home() {
             onClick={openModal}
             className="cert-title"
           >
-            Certificación ISO 9001:2025
+            {t('home.certification.title')}
           </motion.h3>
           <img
             src={fondonormaLogo}

@@ -3,7 +3,7 @@
 /* Asesoría Técnica */
 .advisory-section {
   background-color: white;
-  padding: 40px 70px;
+  padding: 40px 130px;
   position: relative;
 }
 .page-header-servicios {
@@ -144,7 +144,7 @@
 /* Transporte de Carga Internacional y Terrestre */
 .international-transport-section {
   background-color: #f8faff;
-  padding: 20px 70px;
+  padding: 20px 130px;
   box-shadow: 2px 0px 13px -12px #000000;
   margin-top: 20px;
 }
@@ -197,7 +197,7 @@
 /* Almacenamiento y Distribución / Servicios Navieros */
 .storage-maritime-section {
   background-color: white;
-  padding: 40px 70px;
+  padding: 40px 130px;
   position: relative;
   overflow: hidden;
 }
@@ -525,7 +525,7 @@
 .service-box {
   background-color: white;
   border-radius: 10px;
-  padding: 40px 70px;
+  padding: 40px 130px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   display: flex;

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "~/contexts/LanguageContext";
 import AnimatedElement from "../components/AnimatedElement";
 import "../styles/servicios.css";
 import imageMap from "../assets/maps.png";
@@ -23,10 +24,12 @@ export function meta() {
 }
 
 export default function Servicios() {
+  const { t } = useLanguage();
+  
   return (
     <div className="servicios-page">
       <div className="page-header-servicios">
-        <h2>Nuestras Soluciones Logisticas</h2>
+        <h2>{t('services.page.title')}</h2>
       </div>
       {/* Asesoría Técnica */}
       <section className="advisory-section section">
@@ -51,22 +54,18 @@ export default function Servicios() {
                   src={hexagonIcon}
                   alt=""
                 />
-                <h2>Asesoría técnica</h2>
+                <h2>{t('services.page.advisory.title')}</h2>
               </div>
               <p className="service-description">
-                Ponemos a tu disposición asesoría técnica especializada en
-                materia de aduanas, comercio internacional e integración
-                económica.
+                {t('services.page.advisory.description')}
               </p>
               <ul className="service-list">
-                <li>Asesoramos.</li>
-                <li>Informamos.</li>
-                <li>Apoyamos</li>
+                <li>{t('services.page.advisory.list1')}</li>
+                <li>{t('services.page.advisory.list2')}</li>
+                <li>{t('services.page.advisory.list3')}</li>
               </ul>
               <p className="service-extra-info">
-                Trámite de permisos requeridos, por las autoridades aduaneras,
-                para el ingreso o extracción de mercancías relacionadas con el
-                territorio nacional.
+                {t('services.page.advisory.extraInfo')}
               </p>
             </AnimatedElement>
 
@@ -108,27 +107,18 @@ export default function Servicios() {
                     src={hexagonIcon}
                     alt=""
                   />
-                  <h2>Transporte de Carga Internacional:</h2>
+                  <h2>{t('services.page.international.title')}</h2>
                 </div>
                 <p className="service-highlight">
                   <em>
-                    Llegamos a más de 180 países del mundo, lo que nos permite
-                    ofrecerte:
+                    {t('services.page.international.highlight')}
                   </em>
                 </p>
                 <ul className="service-list">
-                  <li>Cobertura en todos los continentes.</li>
-                  <li>
-                    Servicios consolidados aéreos, marítimos y multimodal.
-                  </li>
-                  <li>
-                    Servicio de contenedores completos (FCL) y carga fraccionada
-                    (LCL).
-                  </li>
-                  <li>
-                    Transporte terrestre internacional en furgones completos
-                    (FTL) y fraccionados (LTL).
-                  </li>
+                  <li>{t('services.page.international.list1')}</li>
+                  <li>{t('services.page.international.list2')}</li>
+                  <li>{t('services.page.international.list3')}</li>
+                  <li>{t('services.page.international.list4')}</li>
                 </ul>
               </AnimatedElement>
               <div className="service-content-wrapper">
@@ -142,14 +132,10 @@ export default function Servicios() {
                       src={hexagonIcon}
                       alt=""
                     />
-                    <h2>Transporte Terrestre:</h2>
+                    <h2>{t('services.page.landTransport.title')}</h2>
                   </div>
                   <p className="service-description">
-                    De manera eficiente, segura e integrada, colocamos a tu
-                    disposición el servicio de flete terrestre nacional, a fin
-                    de garantizar que tus cargas lleguen a tiempo en el lugar
-                    exacto, bajo el cuidado de la misma empresa, con los
-                    controles y estándares de calidad.
+                    {t('services.page.landTransport.description')}
                   </p>
                 </AnimatedElement>
               </div>
@@ -202,33 +188,18 @@ export default function Servicios() {
                     src={hexagonIcon}
                     alt=""
                   />
-                  <h2>Almacenamiento y Distribución:</h2>
+                  <h2>{t('services.page.storage.title')}</h2>
                 </div>
 
                 <p className="service-description">
-                  <strong>Compras Internacionales:</strong> Ponemos a tu
-                  disposición un equipo capacitado y de alto rendimiento que te
-                  guiará en cada paso durante todo el proceso, desde donde
-                  realizar tus compras hasta colocarlo en la puerta de tu
-                  fábrica. Cubriendo demanda desde Asia hasta Latinoamérica.
+                  <strong>{t('services.page.storage.internationalPurchases')}</strong> {t('services.page.storage.description')}
                 </p>
 
                 <ul className="service-list">
-                  <li>
-                    Soluciones integrales en compras y logísticas, con envíos
-                    aéreos y marítimos.
-                  </li>
-                  <li>
-                    Consolidación de carga, sin importar el tamaño y ubicación.
-                  </li>
-                  <li>
-                    Networking, investigación de mercado para importación y
-                    exportación.
-                  </li>
-                  <li>
-                    Envío de carga desde Miami a Venezuela, haciendo entrega en
-                    almacenes u oficinas.
-                  </li>
+                  <li>{t('services.page.storage.list1')}</li>
+                  <li>{t('services.page.storage.list2')}</li>
+                  <li>{t('services.page.storage.list3')}</li>
+                  <li>{t('services.page.storage.list4')}</li>
                 </ul>
               </AnimatedElement>
               <AnimatedElement
@@ -264,50 +235,31 @@ export default function Servicios() {
                   src={hexagonIcon}
                   alt=""
                 />
-                <h2>Servicios Navieros</h2>
+                <h2>{t('services.page.maritime.title')}</h2>
               </div>
 
               <p className="service-description">
-                Desde 1945, hemos perfeccionado nuestro servicio para ofrecer la
-                excelencia que tu negocio merece. Nuestra vasta experiencia nos
-                ha posicionado como agentes de confianza en Venezuela para las
-                líneas navieras más importantes del mundo.
+                {t('services.page.maritime.description')}
               </p>
 
               <div className="maritime-services-grid">
                 <div className="maritime-service-column">
-                  <h4>Manejo de contenedores llenos y vacíos:</h4>
+                  <h4>{t('services.page.maritime.containers.title')}</h4>
                   <ul className="service-sublist">
-                    <li>
-                      Gestión total de contenedores: llenos y vacíos con
-                      movilización eficiente en los principales puertos de
-                      Venezuela.
-                    </li>
-                    <li>
-                      Control y monitoreo en tiempo real: ofrecemos visibilidad
-                      y control sobre el estatus de sus equipos.
-                    </li>
-                    <li>
-                      Seguridad: garantizamos la integridad de su mercancía y el
-                      resguardo de los contenedores.
-                    </li>
-                    <li>
-                      Reparaciones de contenedores: operamos bajo estándares
-                      internacionales.
-                    </li>
+                    <li>{t('services.page.maritime.containers.list1')}</li>
+                    <li>{t('services.page.maritime.containers.list2')}</li>
+                    <li>{t('services.page.maritime.containers.list3')}</li>
+                    <li>{t('services.page.maritime.containers.list4')}</li>
                   </ul>
                 </div>
 
                 <div className="maritime-service-column">
-                  <h4>Actuando como:</h4>
+                  <h4>{t('services.page.maritime.actingAs.title')}</h4>
                   <ul className="service-sublist">
-                    <li>Agente general</li>
-                    <li>Agente portuario</li>
-                    <li>Agente protector</li>
-                    <li>
-                      Manejo de carga pesada y voluminosa, y coordinación de las
-                      operaciones de carga y descarga.
-                    </li>
+                    <li>{t('services.page.maritime.actingAs.list1')}</li>
+                    <li>{t('services.page.maritime.actingAs.list2')}</li>
+                    <li>{t('services.page.maritime.actingAs.list3')}</li>
+                    <li>{t('services.page.maritime.actingAs.list4')}</li>
                   </ul>
                 </div>
               </div>
@@ -359,16 +311,10 @@ export default function Servicios() {
                   src={hexagonIcon}
                   alt=""
                 />
-                <h2>Agenciamiento Aduana</h2>
+                <h2>{t('services.page.customs.title')}</h2>
               </div>
               <p className="service-description">
-                Con más de 110 años de experiencia en el mercado venezolano,
-                atendemos tus importaciones, exportaciones y/o tránsito de
-                embarques; así como tu reimportación, reexportación,
-                reexpedición, almacenamiento o depósito y/o la aplicación de los
-                Regímenes Aduaneros Especiales, a través de todas las aduanas
-                habilitadas marítimas, aéreas y terrestres, en las que tenemos
-                presencia.
+                {t('services.page.customs.description')}
               </p>
             </AnimatedElement>
           </div>
@@ -380,7 +326,7 @@ export default function Servicios() {
         <div>
           <AnimatedElement animation="fadeUp">
             <div className="logistics-chain-header">
-              <h2>NUESTRA CADENA LOGÍSTICA...</h2>
+              <h2>{t('services.page.logisticsChain.title')}</h2>
             </div>
           </AnimatedElement>
           <AnimatedElement animation="fadeUp" delay={0.2}>

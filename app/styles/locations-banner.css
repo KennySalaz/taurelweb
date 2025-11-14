@@ -96,10 +96,12 @@
   width: 35%;
 }
 .taurel-logo {
-  width: 280px;
-  height: auto;
-  filter: brightness(0) invert(1);
-  transition: all 0.3s ease;
+  width: 180px;
+    height: auto;
+    filter: brightness(0) invert(1);
+    transition: all 0.3s 
+ease;
+    margin-left: -10px;
 }
 
 .taurel-logo:hover {

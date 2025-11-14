@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "~/contexts/LanguageContext";
 import "../styles/certification-modal.css";
 import image1 from "../assets/modal/1.png";
 import image2 from "../assets/modal/2.png";
@@ -17,6 +18,7 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
   isOpen,
   onClose,
 }) => {
+  const { t } = useLanguage();
   const titles = [
     "TAUREL & CÍA. SUCRS., C.A Certificado n° 9001-151-31-11-2001",
     "CUSTODIAS Y ALMACENAJE , C.A Certificado n° 9001-149-31-12-1999",
@@ -67,7 +69,7 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
                   className="modal-cert-logo modal-cert-logo-left"
                 />
                 <h2 className="modal-cert-title">
-                  Certificación ISO 9001:2025
+                  {t('home.certification.title')}
                 </h2>
                 <img
                   src="/app/assets/brillante _FONDONORMA_ 1.png"

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../styles/footer.css";
-import TaurelLogo from "../assets/logo2.png";
+import TaurelLogo from "../assets/logo.png";
 import LinkedinIcon from "../assets/linkedin.png";
 import FacebookIcon from "../assets/facebook.png";
 import InstagramIcon from "../assets/instagram.png";
@@ -12,7 +12,10 @@ import phone from "../assets/phone.png";
 import bandera from "../assets/bandera.png";
 import arrowpUT from "../assets/arrorflow.png";
 import "../styles/partners-slider.css";
+import { useLanguage } from "../contexts/LanguageContext";
+
 const Footer = () => {
+  const { language, setLanguage, t } = useLanguage();
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
@@ -31,14 +34,14 @@ const Footer = () => {
     switch (name) {
       case "nombre":
         if (!value.trim()) {
-          error = "El nombre es requerido";
+          error = t('footer.name') + ' ' + t('footer.errorRequired');
         }
         break;
       case "email":
         if (!value.trim()) {
-          error = "El correo electrónico es requerido";
+          error = t('footer.email') + ' ' + t('footer.errorRequired');
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-          error = "Formato de correo inválido";
+          error = t('footer.errorInvalidEmail');
         }
         break;
     }
@@ -91,10 +94,10 @@ const Footer = () => {
         email: "",
       });
 
-      alert("¡Mensaje enviado exitosamente!");
+      alert(t('footer.successMessage'));
     } catch (error) {
       console.error("Error al enviar formulario:", error);
-      alert("Error al enviar el mensaje. Por favor, inténtelo de nuevo.");
+      alert(t('footer.errorMessage'));
     } finally {
       setIsSubmitting(false);
     }
@@ -122,7 +125,7 @@ const Footer = () => {
               <img src={TaurelLogo} alt="Taurel" />
             </Link>
             <p className="footer-tagline">
-              Impulsamos tu negocio de principio a fin.
+              {t('footer.tagline')}
             </p>
 
             <ul className="contact-list">
@@ -136,7 +139,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="whatsapp-link"
-                  aria-label="Contactar por WhatsApp"
+                  aria-label={t('footer.contactWhatsApp')}
                 >
                   +58 424-1665906
                 </a>
@@ -151,7 +154,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="whatsapp-link"
-                  aria-label="Contactar por WhatsApp"
+                  aria-label={t('footer.contactWhatsApp')}
                 >
                   +58 424-2584353
                 </a>
@@ -165,7 +168,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: "white" }}
-                  aria-label="Ver ubicación en Google Maps"
+                  aria-label={t('footer.viewLocation')}
                 >
                   Boleíta Norte, Caracas Dtto Capital
                 </a>
@@ -215,7 +218,7 @@ const Footer = () => {
           {/* Columna derecha: Publicaciones y contacto rápido */}
           <div className="footer-right">
             <div className="recent-posts">
-              <h3>Publicaciones Recientes</h3>
+              <h3>{t('footer.recentPosts')}</h3>
               <div className="posts-row">
                 <a
                   className="post-card post-1"
@@ -236,7 +239,7 @@ const Footer = () => {
             </div>
 
             <div className="quick-contact">
-              <h3>Contacto rápido</h3>
+              <h3>{t('footer.quickContact')}</h3>
               <form className="quick-form" onSubmit={handleSubmit}>
                 <div className="footer-form-group-row">
                   <div className="footer-form-group">
@@ -246,8 +249,8 @@ const Footer = () => {
                       value={formData.nombre}
                       onChange={handleInputChange}
                       className={errors.nombre ? "input-error" : ""}
-                      placeholder="Nombre y Apellido"
-                      aria-label="Nombre y Apellido"
+                      placeholder={t('footer.name')}
+                      aria-label={t('footer.name')}
                     />
                     {errors.nombre && (
                       <span className="footer-error-message">
@@ -262,8 +265,8 @@ const Footer = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       className={errors.email ? "input-error" : ""}
-                      placeholder="Correo electrónico"
-                      aria-label="Correo electrónico"
+                      placeholder={t('footer.email')}
+                      aria-label={t('footer.email')}
                     />
                     {errors.email && (
                       <span className="footer-error-message">
@@ -278,7 +281,7 @@ const Footer = () => {
                     className={`btn-send ${!isFormValid ? "btn-disabled" : ""}`}
                     disabled={!isFormValid || isSubmitting}
                   >
-                    {isSubmitting ? "Enviando..." : "Enviar"}
+                    {isSubmitting ? t('footer.sending') : t('footer.send')}
                   </button>
                 </div>
               </form>
@@ -288,12 +291,71 @@ const Footer = () => {
           {/* Idioma */}
         </div>
         <div className="footer-lang">
-          <img className="flag-ven" src={bandera} alt="Venezuela" />
-          <a href="#" className="lang-active">
+          <img 
+            className="flag-ven" 
+            src={bandera} 
+            alt="Venezuela"
+            style={{ display: language === 'es' ? 'block' : 'none' }}
+          />
+          <svg 
+            className="flag-ven" 
+            xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 50 30"
+            style={{ display: language === 'en' ? 'block' : 'none' }}
+          >
+            {/* Rayas rojas y blancas */}
+            <rect width="50" height="30" fill="#B22234"/>
+            <rect y="2.31" width="50" height="2.31" fill="#fff"/>
+            <rect y="6.92" width="50" height="2.31" fill="#fff"/>
+            <rect y="11.54" width="50" height="2.31" fill="#fff"/>
+            <rect y="16.15" width="50" height="2.31" fill="#fff"/>
+            <rect y="20.77" width="50" height="2.31" fill="#fff"/>
+            <rect y="25.38" width="50" height="2.31" fill="#fff"/>
+            
+            {/* Cuadro azul */}
+            <rect width="20" height="13.85" fill="#3C3B6E"/>
+            
+            {/* Estrellas blancas */}
+            <g fill="#fff">
+              <circle cx="2.5" cy="2" r="0.8"/>
+              <circle cx="7.5" cy="2" r="0.8"/>
+              <circle cx="12.5" cy="2" r="0.8"/>
+              <circle cx="17.5" cy="2" r="0.8"/>
+              
+              <circle cx="5" cy="4.5" r="0.8"/>
+              <circle cx="10" cy="4.5" r="0.8"/>
+              <circle cx="15" cy="4.5" r="0.8"/>
+              
+              <circle cx="2.5" cy="7" r="0.8"/>
+              <circle cx="7.5" cy="7" r="0.8"/>
+              <circle cx="12.5" cy="7" r="0.8"/>
+              <circle cx="17.5" cy="7" r="0.8"/>
+              
+              <circle cx="5" cy="9.5" r="0.8"/>
+              <circle cx="10" cy="9.5" r="0.8"/>
+              <circle cx="15" cy="9.5" r="0.8"/>
+              
+              <circle cx="2.5" cy="12" r="0.8"/>
+              <circle cx="7.5" cy="12" r="0.8"/>
+              <circle cx="12.5" cy="12" r="0.8"/>
+              <circle cx="17.5" cy="12" r="0.8"/>
+            </g>
+          </svg>
+          <a 
+            href="#" 
+            className={language === 'es' ? 'lang-active' : ''}
+            onClick={(e) => { e.preventDefault(); setLanguage('es'); }}
+          >
             ESP
           </a>
           <span className="sep">|</span>
-          <a href="#">ENG</a>
+          <a 
+            href="#"
+            className={language === 'en' ? 'lang-active' : ''}
+            onClick={(e) => { e.preventDefault(); setLanguage('en'); }}
+          >
+            ENG
+          </a>
         </div>
 
         {/* Botón Back to Top */}
@@ -313,7 +375,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container">
-          <p className="copyright">Copyright 2025 Taurel. RIF: J-00035914-8</p>
+          <p className="copyright">{t('footer.copyright')}</p>
         </div>
       </div>
     </footer>

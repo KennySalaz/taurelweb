@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useLanguage } from "~/contexts/LanguageContext";
 
 interface AboutUsSliderProps {
   className?: string;
 }
 
 export default function AboutUsSlider({ className = "" }: AboutUsSliderProps) {
+  const { t } = useLanguage();
   const [activeSlide, setActiveSlide] = useState(0);
 
   const handleSlideChange = (slideIndex: number) => {
@@ -36,16 +38,12 @@ export default function AboutUsSlider({ className = "" }: AboutUsSliderProps) {
       >
         <div className="about-slide-content">
           <div className="about-slide-text about-slide-text-left">
-            <h2>Misión</h2>
+            <h2>{t('aboutUs.mission.title')}</h2>
             <p>
-              Nuestra misión fundamental es facilitar el comercio internacional
-              a través de un servicio de logística integral, actuando como el
-              puente estratégico que conecta mercados y oportunidades.
+              {t('aboutUs.mission.paragraph1')}
             </p>
             <p>
-              Nos dedicamos a transformar la experiencia logística en su
-              totalidad, priorizando la calidad en cada eslabón de la cadena de
-              suministro, desde el origen hasta el destino final.
+              {t('aboutUs.mission.paragraph2')}
             </p>
           </div>
         </div>
@@ -57,18 +55,12 @@ export default function AboutUsSlider({ className = "" }: AboutUsSliderProps) {
       >
         <div className="about-slide-content">
           <div className="about-slide-text about-slide-text-right">
-            <h2>Visión</h2>
+            <h2>{t('aboutUs.vision.title')}</h2>
             <p>
-              Nos visualizamos como el agente transformador del sector logístico
-              venezolano, impulsando un cambio profundo mediante la introducción
-              de estándares de clase mundial, innovación tecnológica y prácticas
-              operativas de vanguardia.
+              {t('aboutUs.vision.paragraph1')}
             </p>
             <p>
-              Aspiramos a alcanzar niveles de desempeño tan excelso que no solo
-              redefinan los parámetros de la industria local, sino que nos
-              proyecten con fuerza en el escenario internacional, estableciendo
-              alianzas globales y ampliando nuestro radio de acción.
+              {t('aboutUs.vision.paragraph2')}
             </p>
           </div>
         </div>
