@@ -9,6 +9,8 @@ import image4 from "../assets/modal/4.png";
 import image5 from "../assets/modal/5.png";
 import image6 from "../assets/modal/6.png";
 import hexa from "../assets/Hexagonos-modal.png";
+import ISOImage from "../assets/Logo-ISO.png";
+ import IsoBrinnat from "../assets/brillante _FONDONORMA_ 1.png";
 interface CertificationModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -64,7 +66,7 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
             <div className="modal-header">
               <div className="modal-cert-banner">
                 <img
-                  src="/app/assets/Logo-ISO.png"
+                  src={ISOImage}
                   alt="ISO"
                   className="modal-cert-logo modal-cert-logo-left"
                 />
@@ -72,7 +74,7 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
                   {t('home.certification.title')}
                 </h2>
                 <img
-                  src="/app/assets/brillante _FONDONORMA_ 1.png"
+                  src={IsoBrinnat}
                   alt="FONDONORMA"
                   className="modal-cert-logo modal-cert-logo-right"
                 />
