@@ -80,15 +80,27 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
             transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <img style={{ position:"absolute" , bottom:"0", left:"0", width:"35%"}} src={haxgonal} alt="Hexagonos" />
+            <img
+              style={{
+                position: "absolute",
+                bottom: "0",
+                left: "0",
+                width: "35%",
+              }}
+              src={haxgonal}
+              alt="Hexagonos"
+            />
             <button className="modal-close" onClick={onClose}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <svg
+                width="16"
+                height="17"
+                viewBox="0 0 18 19"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
-                  d="M18 6L6 18M6 6l12 12"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  d="M-3.90187e-05 18.375L7.76996 8.295L7.73496 9.52L0.349961 -1.2517e-06H3.14996L9.20496 7.875L8.15496 7.84L14.21 -1.2517e-06H16.94L9.48496 9.625L9.51996 8.295L17.36 18.375H14.525L8.11996 9.975L9.09996 10.115L2.79996 18.375H-3.90187e-05Z"
+                  fill="#243C6B"
                 />
               </svg>
             </button>
@@ -239,7 +251,7 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
                       color: "#243C6B",
                       gap: "8px",
                       backgroundColor: "#E0E0E070",
-                      textDecoration:'underline'
+                      textDecoration: "underline",
                     }}
                   >
                     <svg
@@ -276,7 +288,6 @@ const JobModal: React.FC<JobModalProps> = ({ isOpen, onClose }) => {
                         />
                       </defs>
                     </svg>
-                    
                     Adjunte su CV
                     <input
                       type="file"

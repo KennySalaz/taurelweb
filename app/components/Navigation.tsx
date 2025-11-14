@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../styles/navigation.css";
 import logo from "../assets/logo.png";
+import bandera from "../assets/bandera.png";
 import JobModal from "./JobModal";
 
 const Navigation = () => {
@@ -64,12 +65,22 @@ const Navigation = () => {
 
           {/* Special Links */}
           <div className="special-links">
-            <a href="#" className="login-link" onClick={openJobModal}>
-              Empleo
-            </a>
             <a href="#" className="track-link">
               Rastrea tu embarque
             </a>
+            <a href="#" className="login-link" onClick={openJobModal}>
+              Empleo
+            </a>
+            
+            {/* Idioma */}
+            <div className="header-lang-compact">
+              <img className="flag-ven-small" src={bandera} alt="Venezuela" />
+              <a href="#" className="lang-header-active">
+                ESP
+              </a>
+              <span className="lang-sep">|</span>
+              <a href="#" className="lang-header-inactive">ENG</a>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -109,14 +120,22 @@ const Navigation = () => {
                 </Link>
               </li>
               <li>
+                <a href="#" onClick={() => setMobileMenuOpen(false)}>
+                  Rastrea tu embarque
+                </a>
+              </li>
+              <li>
                 <a href="#" onClick={openJobModal}>
                   Empleo
                 </a>
               </li>
-              <li>
-                <a href="#" onClick={() => setMobileMenuOpen(false)}>
-                  Rastrea tu embarque
-                </a>
+              <li className="mobile-lang">
+                <div className="mobile-lang-content">
+                  <img className="flag-ven" src={bandera} alt="Venezuela" />
+                  <a href="#" className="lang-active">ESP</a>
+                  <span className="sep">|</span>
+                  <a href="#">ENG</a>
+                </div>
               </li>
             </ul>
           </div>

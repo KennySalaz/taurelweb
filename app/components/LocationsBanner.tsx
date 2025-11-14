@@ -3,10 +3,9 @@ import { motion } from "framer-motion";
 import "../styles/locations-banner.css";
 
 // Importar assets
-import taurelLogo from "../assets/logo.png";
+import taurelLogo from "../assets/logo2.png";
 import mapVenezuela from "../assets/mappoints.png";
-import maos2 from "../assets/maos2.png";
-
+import tuerca from "../assets/IMG_7051.png";
 const LocationsBanner: React.FC = () => {
   const locations = [
     "Caracas, Dtto. Capital.",
@@ -74,6 +73,7 @@ const LocationsBanner: React.FC = () => {
 
   return (
     <section className="locations-banner">
+        <img className="terca-back" src={tuerca} alt="" />
       <div className="locations-banner-container">
         <motion.div
           className="locations-content"
@@ -82,9 +82,9 @@ const LocationsBanner: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          {/* Logo y tagline */}
+          <img src="" alt="" />
           <motion.div className="locations-header" variants={logoVariants}>
-             <img className="maos2" src={maos2} alt="" />
+          
             <img src={taurelLogo} alt="Taurel" className="taurel-logo" />
             <motion.h2
               className="locations-tagline"
@@ -146,9 +146,12 @@ const LocationsBanner: React.FC = () => {
         ></motion.div>
       </div>
       <img
-      className="mapa-venezuela-points"
+        className="mapa-venezuela-points"
         style={{
-          position: "absolute", top: "0", right: 0, zIndex: 100,
+          position: "absolute",
+          top: "0",
+          right: 0,
+          zIndex: 100,
         }}
         src={mapVenezuela}
         alt=""

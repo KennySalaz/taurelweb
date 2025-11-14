@@ -25,16 +25,15 @@
   position: relative;
 }
 .size-job {
-  height: 80%;
+  height: 80vh;
   max-width: 70%;
 }
 .modal-close {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: rgba(36, 60, 107, 0.1);
   border: none;
-  border-radius: 50%;
+border-radius: 20%;
   width: 40px;
   height: 40px;
   display: flex;
@@ -44,6 +43,7 @@
   color: var(--primary-blue, #243c6b);
   transition: all 0.2s ease;
   z-index: 10;
+  background: linear-gradient(180deg, rgb(36 60 107 / 2%) 0%, rgb(194 194 194 / 33%) 100%);
 }
 
 .modal-close:hover {

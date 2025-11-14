@@ -96,7 +96,7 @@ export default function Home() {
             transition={{ duration: 1 }}
           >
             <p className="stats-title">
-              Más que logística: es un legado de 100 años
+              Taurel: es un legado de 100 años
             </p>
             <p className="stats-subtitle">
               Algunos datos curiosos sobre nuestra compañía

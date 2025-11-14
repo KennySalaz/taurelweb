@@ -166,6 +166,8 @@
   width: 100%;
   height: 35vh;
   position: relative;
+  max-width: 80vw;
+    margin: 0 auto;
 }
 .hexagon-accent {
   width: 60px;
@@ -456,9 +458,8 @@
   position: absolute;
   left: 0;
   width: 100%;
-  height: 200%;
-  top: -200px;
-  background-image: url(/app/assets/flow-send.png);
+  height: 100%;
+  background-image: url(/app/assets/flow-send-3.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

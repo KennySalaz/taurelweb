@@ -17,7 +17,12 @@
   background: linear-gradient(135deg, #1a90ce 0%, #2b9fd9 50%, #1a90ce 100%);
   z-index: 1;
 }
-
+.terca-back{
+  position: absolute;
+    left: 0;
+    z-index: 1;
+    top: -80px;
+}
 /* Decoraciones de fondo */
 .locations-banner::after {
   content: "";

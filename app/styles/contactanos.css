@@ -388,12 +388,12 @@
 }
 .contact-form-content {
   background: var(--primary-blue);
-  max-width: 80%;
+  max-width: 67%;
   margin: 0 auto;
   text-align: center;
   position: relative;
   z-index: 2;
-  padding: 60px 120px;
+  padding: 60px 70px;
   border-radius: 20px;
   box-shadow: 0px 0px 9px black;
 }

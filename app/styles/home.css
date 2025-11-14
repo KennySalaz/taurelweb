@@ -309,7 +309,7 @@
       rgba(26, 144, 206, 0.5) 43.32%,
       #1a90ce 99.19%
     ),
-    url("../assets/slider2.png");
+    url("../assets/home-carousel/1.png");
   background-size: cover;
   background-position: center;
 }
@@ -322,7 +322,72 @@
       rgba(26, 144, 206, 0.5) 43.32%,
       #1a90ce 99.19%
     ),
-    url("../assets/banner1.png");
+    url("../assets/home-carousel/2.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.slide-3 {
+  background:
+    linear-gradient(
+      270deg,
+      rgba(26, 144, 206, 0) 0%,
+      rgba(26, 144, 206, 0.5) 43.32%,
+      #1a90ce 99.19%
+    ),
+    url("../assets/home-carousel/3.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.slide-4 {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(26, 144, 206, 0) 0%,
+      rgba(26, 144, 206, 0.5) 43.32%,
+      #1a90ce 99.19%
+    ),
+    url("../assets/home-carousel/4.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.slide-5 {
+  background:
+    linear-gradient(
+      270deg,
+      rgba(26, 144, 206, 0) 0%,
+      rgba(26, 144, 206, 0.5) 43.32%,
+      #1a90ce 99.19%
+    ),
+    url("../assets/home-carousel/5.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.slide-6 {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(26, 144, 206, 0) 0%,
+      rgba(26, 144, 206, 0.5) 43.32%,
+      #1a90ce 99.19%
+    ),
+    url("../assets/home-carousel/6.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.slide-7 {
+  background:
+    linear-gradient(
+      270deg,
+      rgba(26, 144, 206, 0) 0%,
+      rgba(26, 144, 206, 0.5) 43.32%,
+      #1a90ce 99.19%
+    ),
+    url("../assets/home-carousel/7.png");
   background-size: cover;
   background-position: center;
 }

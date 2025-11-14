@@ -62,19 +62,7 @@ const PartnersSlider: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Botón Back to Top */}
-          <motion.button
-            className="back-to-top"
-            onClick={scrollToTop}
-            whileHover={{ scale: 1.1, y: -3 }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.7 }}
-          >
-            <img src={arrowpUT} alt="" />
-          </motion.button>
+          
         </div>
       </div>
     </div>

@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import "../styles/footer.css";
-import TaurelLogo from "../assets/logo.png";
+import TaurelLogo from "../assets/logo2.png";
 import LinkedinIcon from "../assets/linkedin.png";
 import FacebookIcon from "../assets/facebook.png";
 import InstagramIcon from "../assets/instagram.png";
-import phone from "../assets/phone.png";
+import whatsapp from "../assets/whatsapp.svg";
 import location from "../assets/location.png";
+import phone from "../assets/phone.png";
 import bandera from "../assets/bandera.png";
+import arrowpUT from "../assets/arrorflow.png";
+import "../styles/partners-slider.css";
 const Footer = () => {
   const [formData, setFormData] = useState({
     nombre: "",
@@ -101,6 +105,13 @@ const Footer = () => {
     formData.email.trim() &&
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer className="footer">
       <div className="footer-top">
@@ -117,7 +128,7 @@ const Footer = () => {
             <ul className="contact-list">
               <li>
                 <span className="icon-wrap">
-                  <img src={phone} alt="Teléfono" />
+                  <img src={whatsapp} alt="WhatsApp" />
                 </span>
                 <a
                   style={{ color: "white" }}
@@ -132,11 +143,11 @@ const Footer = () => {
               </li>
               <li>
                 <span className="icon-wrap">
-                  <img src={phone} alt="Teléfono" />
+                  <img src={whatsapp} alt="WhatsApp" />
                 </span>
                 <a
                   style={{ color: "white" }}
-                  href="https://wa.me/584241665906"
+                  href="https://wa.me/584242584353"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="whatsapp-link"
@@ -150,7 +161,7 @@ const Footer = () => {
                   <img src={location} alt="Ubicación" />
                 </span>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Boleíta+Norte,+Caracas+Dtto+Capital"
+                  href="https://maps.app.goo.gl/c9y35v4JSKUY3s5N8"
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{ color: "white" }}
@@ -284,6 +295,20 @@ const Footer = () => {
           <span className="sep">|</span>
           <a href="#">ENG</a>
         </div>
+
+        {/* Botón Back to Top */}
+        <motion.button
+          className="back-to-top"
+          onClick={scrollToTop}
+          whileHover={{ scale: 1.1, y: -3 }}
+          whileTap={{ scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.7 }}
+        >
+          <img src={arrowpUT} alt="" />
+        </motion.button>
       </div>
 
       <div className="footer-bottom">
