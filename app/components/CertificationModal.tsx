@@ -2,12 +2,14 @@ import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "~/contexts/LanguageContext";
 import "../styles/certification-modal.css";
-import image1 from "../assets/modal/1.png";
-import image2 from "../assets/modal/2.png";
-import image3 from "../assets/modal/3.png";
-import image4 from "../assets/modal/4.png";
-import image5 from "../assets/modal/5.png";
-import image6 from "../assets/modal/6.png";
+import image1 from "../assets/modal/1.jpg";
+import image2 from "../assets/modal/2.jpg";
+import image3 from "../assets/modal/3.jpg";
+import image4 from "../assets/modal/4.jpg";
+import image5 from "../assets/modal/5.jpg";
+import image6 from "../assets/modal/6.jpg";
+import image7 from "../assets/modal/7.jpg";
+import image8 from "../assets/modal/8.jpg";
 import hexa from "../assets/Hexagonos-modal.png";
 import ISOImage from "../assets/Logo-ISO.png";
 import IsoBrinnat from "../assets/brillante _FONDONORMA_ 1.png";
@@ -22,14 +24,25 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
 }) => {
   const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = React.useState<number | null>(null);
-  
+  const [zoomStyle, setZoomStyle] = React.useState({});
+  const [isZooming, setIsZooming] = React.useState(false);
+
   const titles = [
     "TAUREL & CÍA. SUCRS., C.A Certificado n° 9001-151-31-11-2001",
     "CUSTODIAS Y ALMACENAJE , C.A Certificado n° 9001-149-31-12-1999",
     "TAUREL & CÍA. SUCRS., C.A Certificado n°9001-837-31-12-2017",
   ];
 
-  const certificateImages = [image1, image2, image3, image4, image5, image6];
+  const certificateImages = [
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+    image7,
+    image8,
+  ];
 
   const handleImageClick = (index: number) => {
     setSelectedImage(index);
@@ -37,11 +50,30 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
 
   const handleBack = () => {
     setSelectedImage(null);
+    setIsZooming(false);
   };
 
   const handleModalClose = () => {
     setSelectedImage(null);
+    setIsZooming(false);
     onClose();
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - left) / width) * 100;
+    const y = ((e.clientY - top) / height) * 100;
+    
+    setZoomStyle({
+      transformOrigin: `${x}% ${y}%`,
+      transform: 'scale(2)',
+    });
+    setIsZooming(true);
+  };
+
+  const handleMouseLeave = () => {
+    setZoomStyle({});
+    setIsZooming(false);
   };
 
   return (
@@ -62,7 +94,9 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
             transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <img src={hexa} alt="Hexagonos" className="modal-hexagonos" />
+            {selectedImage === null && (
+              <img src={hexa} alt="Hexagonos" className="modal-hexagonos" />
+            )}
             <button className="modal-close" onClick={handleModalClose}>
               <svg
                 width="18"
@@ -78,23 +112,25 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
               </svg>
             </button>
 
-            <div className="modal-header">
-              <div className="modal-cert-banner">
-                <img
-                  src={ISOImage}
-                  alt="ISO"
-                  className="modal-cert-logo modal-cert-logo-left"
-                />
-                <h2 className="modal-cert-title">
-                  {t("home.certification.title")}
-                </h2>
-                <img
-                  src={IsoBrinnat}
-                  alt="FONDONORMA"
-                  className="modal-cert-logo modal-cert-logo-right"
-                />
+            {selectedImage === null && (
+              <div className="modal-header">
+                <div className="modal-cert-banner">
+                  <img
+                    src={ISOImage}
+                    alt="ISO"
+                    className="modal-cert-logo modal-cert-logo-left"
+                  />
+                  <h2 className="modal-cert-title">
+                    {t("home.certification.title")}
+                  </h2>
+                  <img
+                    src={IsoBrinnat}
+                    alt="FONDONORMA"
+                    className="modal-cert-logo modal-cert-logo-right"
+                  />
+                </div>
               </div>
-            </div>
+            )}
 
             {selectedImage !== null ? (
               /* Vista ampliada de una sola imagen */
@@ -123,11 +159,20 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
                   </svg>
                   Volver
                 </button>
-                <div className="certificate-zoom-container">
+                <div 
+                  className="certificate-zoom-container"
+                  onMouseMove={handleMouseMove}
+                  onMouseLeave={handleMouseLeave}
+                  style={{ cursor: isZooming ? 'zoom-in' : 'default' }}
+                >
                   <img
                     src={certificateImages[selectedImage]}
                     alt={`Certificado ${selectedImage + 1}`}
                     className="certificate-zoomed-image"
+                    style={{
+                      ...zoomStyle,
+                      transition: isZooming ? 'none' : 'transform 0.3s ease',
+                    }}
                   />
                 </div>
               </motion.div>

@@ -17,11 +17,11 @@
   background: linear-gradient(135deg, #1a90ce 0%, #2b9fd9 50%, #1a90ce 100%);
   z-index: 1;
 }
-.terca-back{
+.terca-back {
   position: absolute;
-    left: 0;
-    z-index: 1;
-    top: -80px;
+  left: 0;
+  z-index: 1;
+  top: -80px;
 }
 /* Decoraciones de fondo */
 .locations-banner::after {
@@ -93,15 +93,14 @@
   top: 0;
   right: 0;
   z-index: 100;
-  width: 35%;
+  width: 60vh;
 }
 .taurel-logo {
   width: 180px;
-    height: auto;
-    filter: brightness(0) invert(1);
-    transition: all 0.3s 
-ease;
-    margin-left: -10px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+  margin-left: -10px;
 }
 
 .taurel-logo:hover {

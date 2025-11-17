@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../styles/footer.css";
@@ -12,15 +12,14 @@ import relojIcon from "../assets/alarm.png";
 import phone from "../assets/phone.png";
 import bandera from "../assets/bandera.png";
 import arrowpUT from "../assets/arrorflow.png";
+import instaPost1 from "../assets/redes/1.jpg";
+import instaPost2 from "../assets/redes/2.jpg";
+import instaPost3 from "../assets/redes/3.jpg";
 import "../styles/partners-slider.css";
 import { useLanguage } from "../contexts/LanguageContext";
-import { getInstagramPosts } from "../services/instagramService";
-import type { InstagramPost } from "../services/instagramService";
 
 const Footer = () => {
   const { language, setLanguage, t } = useLanguage();
-  const [instagramPosts, setInstagramPosts] = useState<InstagramPost[]>([]);
-  const [loadingPosts, setLoadingPosts] = useState(true);
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
@@ -32,17 +31,6 @@ const Footer = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      setLoadingPosts(true);
-      const posts = await getInstagramPosts(3);
-      setInstagramPosts(posts);
-      setLoadingPosts(false);
-    };
-
-    fetchPosts();
-  }, []);
 
   const validateField = (name: string, value: string) => {
     let error = "";
@@ -255,47 +243,42 @@ const Footer = () => {
             <div className="recent-posts">
               <h3>{t("footer.recentPosts")}</h3>
               <div className="posts-row">
-                {loadingPosts ? (
-                  <>
-                    <div className="post-card post-skeleton" />
-                    <div className="post-card post-skeleton" />
-                    <div className="post-card post-skeleton" />
-                  </>
-                ) : instagramPosts.length > 0 ? (
-                  instagramPosts.map((post) => (
-                    <a
-                      key={post.id}
-                      className="post-card"
-                      href={post.permalink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Ver publicación en Instagram: ${post.caption?.substring(0, 50) || "Sin descripción"}`}
-                      style={{
-                        backgroundImage: `url(${post.media_type === "VIDEO" ? post.thumbnail_url : post.media_url})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-                    />
-                  ))
-                ) : (
-                  <>
-                    <a
-                      className="post-card post-1"
-                      href="#"
-                      aria-label="Publicación 1"
-                    />
-                    <a
-                      className="post-card post-2"
-                      href="#"
-                      aria-label="Publicación 2"
-                    />
-                    <a
-                      className="post-card post-3"
-                      href="#"
-                      aria-label="Publicación 3"
-                    />
-                  </>
-                )}
+                <a
+                  className="post-card"
+                  href="https://www.instagram.com/taurel.ve?igsh=dXhlYW5zZGJ5MzZ6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver perfil de Instagram de Taurel"
+                  style={{
+                    backgroundImage: `url(${instaPost1})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                />
+                <a
+                  className="post-card"
+                  href="https://www.instagram.com/taurel.ve?igsh=dXhlYW5zZGJ5MzZ6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver perfil de Instagram de Taurel"
+                  style={{
+                    backgroundImage: `url(${instaPost2})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                />
+                <a
+                  className="post-card"
+                  href="https://www.instagram.com/taurel.ve?igsh=dXhlYW5zZGJ5MzZ6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Ver perfil de Instagram de Taurel"
+                  style={{
+                    backgroundImage: `url(${instaPost3})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                />
               </div>
             </div>
 
