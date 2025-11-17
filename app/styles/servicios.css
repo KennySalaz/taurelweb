@@ -360,8 +360,17 @@
     margin-bottom: 30px;
   }
 
+  .logistics-flow-container {
+    height: auto;
+    min-height: auto;
+  }
+
   .logistics-flow-background {
-    height: 350px;
+    display: none !important;
+  }
+
+  .logistics-flow-mobile {
+    display: flex !important;
   }
 }
 
@@ -400,9 +409,18 @@
     letter-spacing: 0.5px;
   }
 
+  .logistics-flow-container {
+    height: auto;
+    min-height: auto;
+  }
+
   .logistics-flow-background {
-    height: 300px;
-    margin: 0 10px;
+    display: none !important;
+  }
+
+  .logistics-flow-mobile {
+    display: flex !important;
+    padding: 0 15px;
   }
 }
 
@@ -463,6 +481,23 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  display: block;
+}
+
+.logistics-flow-mobile {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.logistics-flow-mobile img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* Estilos para la página de servicios */

@@ -11,6 +11,8 @@ import servicioImg2 from "../assets/servicio-img-2.png";
 import servicioImg3 from "../assets/servicio-img-3.png";
 import servicioImg4 from "../assets/servicio-img-4.png";
 import hexagono14 from "../assets/Hexagonos 14.png";
+import cadenaImagen1 from "../assets/cadena-imagen1.png";
+import cadenaImagen2 from "../assets/cadena-imagen2.png";
 
 export function meta() {
   return [
@@ -332,6 +334,10 @@ export default function Servicios() {
           <AnimatedElement animation="fadeUp" delay={0.2}>
             <div className="logistics-flow-container">
               <div className="logistics-flow-background"></div>
+              <div className="logistics-flow-mobile">
+                <img src={cadenaImagen1} alt="Cadena logística parte 1" />
+                <img style={{marginTop:"-40px"}} src={cadenaImagen2} alt="Cadena logística parte 2" />
+              </div>
             </div>
           </AnimatedElement>
         </div>

@@ -18,7 +18,8 @@ import img1999 from "../assets/1999.png";
 import img2002 from "../assets/2002.png";
 import img2024 from "../assets/2024.png";
 import img1994 from "../assets/1994.png";
-import videoBanner from "../assets/video-banner.mp4";
+import videoBannerHorizontal from "../assets/BANNER HORIZONTAL.mp4";
+import videoBannerVertical from "../assets/BANNER VERTICAL.mp4";
 import maos2 from "../assets/maos2.png";
 export function meta({}: Route.MetaArgs) {
   return [
@@ -42,8 +43,9 @@ export default function Home() {
     <div className="home-page">
       {/* Main Hero Section */}
       <section className="main-hero">
+        {/* Video para pantallas grandes (horizontal) */}
         <video
-          className="main-hero-video"
+          className="main-hero-video main-hero-video-horizontal"
           autoPlay
           muted
           loop
@@ -51,11 +53,28 @@ export default function Home() {
           preload="auto"
           controls={false}
           disablePictureInPicture
-          onLoadStart={() => console.log("Video loading started")}
-          onCanPlay={() => console.log("Video can play")}
-          onError={(e) => console.error("Video error:", e)}
+          onLoadStart={() => console.log("Video horizontal loading started")}
+          onCanPlay={() => console.log("Video horizontal can play")}
+          onError={(e) => console.error("Video horizontal error:", e)}
         >
-          <source src={videoBanner} type="video/mp4" />
+          <source src={videoBannerHorizontal} type="video/mp4" />
+          Tu navegador no soporta el elemento de video.
+        </video>
+        {/* Video para pantallas pequeñas (vertical) */}
+        <video
+          className="main-hero-video main-hero-video-vertical"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          controls={false}
+          disablePictureInPicture
+          onLoadStart={() => console.log("Video vertical loading started")}
+          onCanPlay={() => console.log("Video vertical can play")}
+          onError={(e) => console.error("Video vertical error:", e)}
+        >
+          <source src={videoBannerVertical} type="video/mp4" />
           Tu navegador no soporta el elemento de video.
         </video>
         <div className="main-hero-overlay"></div>

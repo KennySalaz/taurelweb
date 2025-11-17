@@ -2,6 +2,7 @@
 .partners-container {
   position: relative;
   overflow: hidden;
+  background-color: white;
 }
 
 .partners-content {

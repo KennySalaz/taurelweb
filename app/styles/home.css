@@ -22,6 +22,29 @@
   pointer-events: none;
 }
 
+/* Video horizontal: visible en pantallas grandes */
+.main-hero-video-horizontal {
+  display: block;
+}
+
+/* Video vertical: oculto por defecto */
+.main-hero-video-vertical {
+  display: none;
+}
+
+/* En pantallas pequeñas (menor a 768px) */
+@media (max-width: 768px) {
+  /* Ocultar video horizontal */
+  .main-hero-video-horizontal {
+    display: none;
+  }
+  
+  /* Mostrar video vertical */
+  .main-hero-video-vertical {
+    display: block;
+  }
+}
+
 .main-hero-overlay {
   position: absolute;
   top: 0;

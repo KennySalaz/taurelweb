@@ -23,7 +23,7 @@ const ChambersSlider: React.FC<ChambersSliderProps> = ({ chambers }) => {
             className="chambers-slider-track"
             animate={{ x: [0, -100 * chambers.length] }}
             transition={{ 
-              duration: chambers.length * 4, // Duración más lenta para mejor visibilidad
+              duration: chambers.length * 1, // Velocidad más rápida
               repeat: Infinity, 
               ease: "linear" 
             }}

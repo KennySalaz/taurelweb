@@ -92,7 +92,7 @@
 
 .about-slide-text p {
   font-family: var(--font-montserrat);
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -515,7 +515,11 @@
 .swiper-button-next {
   color: white;
 }
-
+@media  (max-width: 1600px) {
+  .about-slide-content {
+    padding: 0 8rem;
+  }
+}
 /* Responsive */
 @media (max-width: 992px) {
   .banner-content h1 {
@@ -754,7 +758,7 @@
 }
 
 .value-card p {
-  font-size: 14px;
+  font-size: 18pxpx;
   color: var(--gray-text);
   line-height: 1.55;
 }
@@ -1119,7 +1123,7 @@
 /*  Slider de Cámaras y Gremios */
 /* ============================= */
 .chambers-strip {
-  background: #f8faff;
+  background: #ffffff;
   border-top: 1px solid #edf0f5;
   border-bottom: 1px solid #edf0f5;
   padding: 20px 0;

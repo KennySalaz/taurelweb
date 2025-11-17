@@ -85,7 +85,7 @@ const translations = {
         cta: 'Conoce nuestras soluciones'
       },
       stats: {
-        title: 'Más que logística: es un legado de 100 años',
+        title: 'Taurel: un legado de más de 100 años',
         subtitle: 'Algunos datos curiosos sobre nuestra compañía',
         offices: 'Oficinas a nivel Nacional',
         partners: 'Aliados a nivel global para conectar sus operaciones',
@@ -112,7 +112,7 @@ const translations = {
           description: 'Este servicio te ayuda a tramitar permisos para importar, exportar y mover mercancías. Además, ofrece asesoría especializada en aduanas y comercio exterior, basándose en el marco legal del Arancel de Aduanas para que todos los procesos sean correctos.'
         },
         service2: {
-          title: 'Agenciamiento Aduanas',
+          title: 'Agenciamiento Aduanal',
           description: 'Atendemos las Importaciones, Exportaciones y/o Tránsito de sus embarques, alineados con la cambiante normativa tanto nacional como internacional, contando con oficinas a través de todas las Aduanas habilitadas marítimas, aéreas y terrestres.'
         },
         service3: {
@@ -137,7 +137,7 @@ const translations = {
         }
       },
       page: {
-        title: 'Nuestras Soluciones Logisticas',
+        title: 'Nuestras Soluciones Logística',
         advisory: {
           title: 'Asesoría técnica',
           description: 'Ponemos a tu disposición asesoría técnica especializada en materia de aduanas, comercio internacional e integración económica.',
@@ -161,7 +161,7 @@ const translations = {
         storage: {
           title: 'Almacenamiento y Distribución:',
           internationalPurchases: 'Compras Internacionales:',
-          description: 'Ponemos a tu disposición un equipo capacitado y de alto rendimiento que te guiará en cada paso durante todo el proceso, desde donde realizar tus compras hasta colocarlo en la puerta de tu fábrica. Cubriendo demanda desde Asia hasta Latinoamérica.',
+          description: 'contamos con almacenes equipados y operativos que ofrecen soluciones de embalaje y llenado/vaciado de contenedores. También disponen de un Depósito Aduanero In Bond y se encargan de la gestión completa de la cadena de suministros.',
           list1: 'Soluciones integrales en compras y logísticas, con envíos aéreos y marítimos.',
           list2: 'Consolidación de carga, sin importar el tamaño y ubicación.',
           list3: 'Networking, investigación de mercado para importación y exportación.',
@@ -186,7 +186,7 @@ const translations = {
           }
         },
         customs: {
-          title: 'Agenciamiento Aduana',
+          title: 'Agenciamiento Aduanal:',
           description: 'Con más de 110 años de experiencia en el mercado venezolano, atendemos tus importaciones, exportaciones y/o tránsito de embarques; así como tu reimportación, reexportación, reexpedición, almacenamiento o depósito y/o la aplicación de los Regímenes Aduaneros Especiales, a través de todas las aduanas habilitadas marítimas, aéreas y terrestres, en las que tenemos presencia.'
         },
         logisticsChain: {
@@ -241,7 +241,7 @@ const translations = {
     contact: {
       title: 'Contáctanos',
       formTitle: '¿Cómo podemos ayudarte?',
-      formDescription: 'Si tiene alguna pregunta sobre Taurel o puede cómo podemos ayudar con cualquier asunto relacionado con logística, póngase en contacto con nuestra gente de atendimiento.',
+      formDescription: 'Nuestro equipo de expertos está a su disposición para resolver atender sus consultas y ofrecer soluciones de logística. ¡Escríbenos!',
       requestPlaceholder: 'Indique su solicitud o requerimiento...',
       namePlaceholder: 'Nombre y Apellido',
       emailPlaceholder: 'Correo Electrónico',
@@ -319,7 +319,7 @@ const translations = {
         cta: 'Discover our solutions'
       },
       stats: {
-        title: 'More than logistics: it\'s a 100-year legacy',
+        title: 'Taurel: it\'s a 100-year legacy',
         subtitle: 'Some interesting facts about our company',
         offices: 'Offices nationwide',
         partners: 'Global partners to connect your operations',

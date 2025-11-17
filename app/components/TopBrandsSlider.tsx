@@ -33,7 +33,7 @@ const TopBrandsSlider: React.FC = () => {
           <motion.div
             className="brands-slider-track"
             animate={{ x: [0, -100 * BRANDS.length] }}
-            transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
           >
             {duplicated.map((b, i) => (
               <div key={`${b.slug}-${i}`} className="brand-logo-item">
@@ -41,6 +41,7 @@ const TopBrandsSlider: React.FC = () => {
                   src={b.slug}
                   alt={b.name}
                   loading="lazy"
+                  style={b.name === "MSC" ? { maxHeight: "93px" } : undefined}
                   onError={(e) => {
                     const img = e.currentTarget;
                     img.style.display = "none";
