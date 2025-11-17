@@ -212,7 +212,7 @@ const Footer = () => {
 
             <div className="footer-social">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/taurel-operador-logistico/"
                 aria-label="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -224,7 +224,7 @@ const Footer = () => {
                 />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/share/1DVDQCVnjk/?mibextid=wwXIfr"
                 aria-label="Facebook"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -236,7 +236,7 @@ const Footer = () => {
                 />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/taurel.ve?igsh=dXhlYW5zZGJ5MzZ6"
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"

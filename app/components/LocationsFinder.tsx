@@ -17,49 +17,49 @@ interface Location {
   schedule?: string;
 }
 
-// Ubicaciones de ejemplo (reemplázalas con las ubicaciones reales cuando las tengas)
+// Ubicaciones oficiales de Taurel
 const sampleLocations: Location[] = [
   {
     id: '1',
-    name: 'Taurel Oficina Central',
-    address: 'Torre Q, Piso 2 Ofic. 2018, Carretera de Alto Hatillo, Miranda',
-    coordinates: { lat: 10.421543, lng: -66.824137 },
-    phone: '+58 212 123 4567',
-    email: 'info@taurel.com',
-    schedule: 'Lun-Vie: 8:00 AM - 6:00 PM'
+    name: 'Caracas',
+    address: 'Ciudad Center. Calle Sanatorio del Ávila. Torre F. Piso 2. Boleíta Norte, Caracas. Venezuela.',
+    coordinates: { lat: 10.491016, lng: -66.831833 },
+    phone: '+58 (212)-718.9700'
   },
   {
     id: '2',
-    name: 'Taurel Almacén Principal',
-    address: 'Zona Industrial, Galpón 15, Calle Principal, Caracas',
-    coordinates: { lat: 10.461212, lng: -66.883214 },
-    phone: '+58 212 234 5678',
-    schedule: 'Lun-Vie: 7:00 AM - 4:00 PM, Sáb: 8:00 AM - 12:00 PM'
+    name: 'San Antonio del Táchira',
+    address: 'Av. 1ro. De Mayo Centro Cívico Piso 1 Local 1-6 San Antonio Edo.Tachira',
+    coordinates: { lat: 7.817551, lng: -72.440567 },
+    phone: '+58 (276)-771.00.11'
   },
   {
     id: '3',
-    name: 'Taurel Centro Logístico',
-    address: 'Av. Intercomunal, Centro Empresarial, Torre B, Piso 3, Valencia',
-    coordinates: { lat: 10.176445, lng: -67.998541 },
-    phone: '+58 241 345 6789',
-    schedule: 'Lun-Vie: 8:00 AM - 5:00 PM'
+    name: 'La Guaira',
+    address: 'Av. Soublette, Sector El Cantón, Edificio Taurel, La Guaira, Edo-Vargas, Venezuela.',
+    coordinates: { lat: 10.601945, lng: -66.933567 },
+    phone: '+58 (212)-303.2200'
   },
   {
     id: '4',
-    name: 'Taurel Puerto Marítimo',
-    address: 'Terminal Marítima, Zona Portuaria, La Guaira',
-    coordinates: { lat: 10.599294, lng: -66.932928 },
-    phone: '+58 212 456 7890',
-    schedule: '24 horas, todos los días'
+    name: 'Barquisimeto',
+    address: 'Av. Las Industrias Centro de Servicio Mercantil Piso 1 Ofc. 7. Barquisimeto, Edo. Lara.',
+    coordinates: { lat: 10.064696, lng: -69.319170 },
+    phone: '+58 (251) 443.3198'
   },
   {
     id: '5',
-    name: 'Taurel Oficina Maracaibo',
-    address: 'Centro Comercial Lago Mall, Piso 2, Local 45, Maracaibo',
-    coordinates: { lat: 10.667564, lng: -71.623129 },
-    phone: '+58 261 567 8901',
-    email: 'maracaibo@taurel.com',
-    schedule: 'Lun-Vie: 8:30 AM - 5:30 PM'
+    name: 'Maracaibo',
+    address: 'Av. 4 Bella Vista con calle 86A C. C Akrai Center Piso 2 Locales C-1 y C-2. Maracaibo; Edo. Zulia',
+    coordinates: { lat: 10.641413, lng: -71.611824 },
+    phone: '+58 (261) 723.1164'
+  },
+  {
+    id: '6',
+    name: 'CUSALCA Catia La Mar',
+    address: 'Entrada Urb. Playa Grande, Zona Industrial. Catia La Mar, Edo. Vargas.',
+    coordinates: { lat: 10.603761, lng: -67.033211 },
+    phone: '+58 (212) 352-1802'
   }
 ];
 

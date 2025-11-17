@@ -44,7 +44,7 @@ const PartnersSlider: React.FC = () => {
                 x: [0, -100 * partners.length],
               }}
               transition={{
-                duration: 10,
+                duration: 5,
                 repeat: Infinity,
                 ease: "linear",
               }}

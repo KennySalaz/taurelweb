@@ -3,7 +3,6 @@ import { useLanguage } from "~/contexts/LanguageContext";
 import "../styles/sobre-nosotros.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
-import TopBrandsSlider from "../components/TopBrandsSlider";
 import AboutUsSlider from "../components/AboutUsSlider";
 import ChambersSlider from "../components/ChambersSlider";
 import CertificationModal from "../components/CertificationModal";
@@ -35,6 +34,7 @@ import backgroundHexLeft from "../assets/Hexagonos-11.png";
 import backgroundHexRight from "../assets/Hexagonos 2.png";
 import isoLogo from "../assets/Logo-ISO.png";
 import fondonormaLogo from "../assets/brillante _FONDONORMA_ 1.png";
+import TopBrandsSlider from "~/contexts/TopBrandsSlider";
 
 export function meta() {
   return [

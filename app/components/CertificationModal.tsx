@@ -21,6 +21,8 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
   onClose,
 }) => {
   const { t } = useLanguage();
+  const [selectedImage, setSelectedImage] = React.useState<number | null>(null);
+  
   const titles = [
     "TAUREL & CÍA. SUCRS., C.A Certificado n° 9001-151-31-11-2001",
     "CUSTODIAS Y ALMACENAJE , C.A Certificado n° 9001-149-31-12-1999",
@@ -28,6 +30,19 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
   ];
 
   const certificateImages = [image1, image2, image3, image4, image5, image6];
+
+  const handleImageClick = (index: number) => {
+    setSelectedImage(index);
+  };
+
+  const handleBack = () => {
+    setSelectedImage(null);
+  };
+
+  const handleModalClose = () => {
+    setSelectedImage(null);
+    onClose();
+  };
 
   return (
     <AnimatePresence>
@@ -48,7 +63,7 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
             onClick={(e) => e.stopPropagation()}
           >
             <img src={hexa} alt="Hexagonos" className="modal-hexagonos" />
-            <button className="modal-close" onClick={onClose}>
+            <button className="modal-close" onClick={handleModalClose}>
               <svg
                 width="18"
                 height="19"
@@ -81,53 +96,94 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
               </div>
             </div>
 
-            <div className="certificates-container">
-              {/* Sección de títulos arriba */}
+            {selectedImage !== null ? (
+              /* Vista ampliada de una sola imagen */
               <motion.div
-                className="titles-section"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
+                className="certificate-zoom-view"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
               >
-                {titles.map((title, index) => (
-                  <motion.h3
-                    key={index}
-                    className="section-title"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 * index }}
+                <button className="back-button" onClick={handleBack}>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    {title}
-                  </motion.h3>
-                ))}
-              </motion.div>
-
-              {/* Contenedor con las 6 imágenes */}
-              <motion.div
-                className="certificates-grid-container"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 0.3 }}
-              >
-                <div className="certificates-grid">
-                  {certificateImages.map((image, index) => (
-                    <motion.div
-                      key={index}
-                      className="certificate-item"
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.3, delay: 0.1 * index }}
-                    >
-                      <img
-                        src={image}
-                        alt={`Certificado ${index + 1}`}
-                        className="certificate-image"
-                      />
-                    </motion.div>
-                  ))}
+                    <path
+                      d="M15 18L9 12L15 6"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  Volver
+                </button>
+                <div className="certificate-zoom-container">
+                  <img
+                    src={certificateImages[selectedImage]}
+                    alt={`Certificado ${selectedImage + 1}`}
+                    className="certificate-zoomed-image"
+                  />
                 </div>
               </motion.div>
-            </div>
+            ) : (
+              /* Vista de grid con todas las imágenes */
+              <div className="certificates-container">
+                {/* Sección de títulos arriba */}
+                <motion.div
+                  className="titles-section"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {titles.map((title, index) => (
+                    <motion.h3
+                      key={index}
+                      className="section-title"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.1 * index }}
+                    >
+                      {title}
+                    </motion.h3>
+                  ))}
+                </motion.div>
+
+                {/* Contenedor con las 6 imágenes */}
+                <motion.div
+                  className="certificates-grid-container"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.3 }}
+                >
+                  <div className="certificates-grid">
+                    {certificateImages.map((image, index) => (
+                      <motion.div
+                        key={index}
+                        className="certificate-item"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3, delay: 0.1 * index }}
+                        whileHover={{ scale: 1.05 }}
+                        onClick={() => handleImageClick(index)}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <img
+                          src={image}
+                          alt={`Certificado ${index + 1}`}
+                          className="certificate-image"
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+            )}
           </motion.div>
         </motion.div>
       )}

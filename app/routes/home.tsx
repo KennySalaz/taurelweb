@@ -1,6 +1,7 @@
 import type { Route } from "./+types/home";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router";
 import AnimatedElement from "../components/AnimatedElement";
 import CountUp from "../components/CountUp";
 import ServicesSlider from "../components/ServicesSlider";
@@ -35,9 +36,11 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { t } = useLanguage();
+  const navigate = useNavigate();
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+  const handleCtaClick = () => navigate("/servicios");
 
   return (
     <div className="home-page">
@@ -95,6 +98,7 @@ export default function Home() {
                 transition={{ duration: 1, delay: 0.3 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={handleCtaClick}
               >
                 {t('home.hero.cta')}
               </motion.button>
