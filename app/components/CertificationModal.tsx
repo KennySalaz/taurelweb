@@ -26,6 +26,7 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
   const [selectedImage, setSelectedImage] = React.useState<number | null>(null);
   const [zoomStyle, setZoomStyle] = React.useState({});
   const [isZooming, setIsZooming] = React.useState(false);
+  const [zoomEnabled, setZoomEnabled] = React.useState(false);
 
   const titles = [
     "TAUREL & CÍA. SUCRS., C.A Certificado n° 9001-151-31-11-2001",
@@ -51,27 +52,40 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
   const handleBack = () => {
     setSelectedImage(null);
     setIsZooming(false);
+    setZoomEnabled(false);
   };
 
   const handleModalClose = () => {
     setSelectedImage(null);
     setIsZooming(false);
+    setZoomEnabled(false);
     onClose();
   };
 
+  const toggleZoom = () => {
+    setZoomEnabled(!zoomEnabled);
+    if (zoomEnabled) {
+      setZoomStyle({});
+      setIsZooming(false);
+    }
+  };
+
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!zoomEnabled) return;
+    
     const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - left) / width) * 100;
     const y = ((e.clientY - top) / height) * 100;
     
     setZoomStyle({
       transformOrigin: `${x}% ${y}%`,
-      transform: 'scale(2)',
+      transform: 'scale(1.5)',
     });
     setIsZooming(true);
   };
 
   const handleMouseLeave = () => {
+    if (!zoomEnabled) return;
     setZoomStyle({});
     setIsZooming(false);
   };
@@ -141,29 +155,67 @@ const CertificationModal: React.FC<CertificationModalProps> = ({
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
               >
-                <button className="back-button" onClick={handleBack}>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+                <div className="zoom-controls">
+                  <button className="back-button" onClick={handleBack}>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15 18L9 12L15 6"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    Volver
+                  </button>
+                  
+                  <button 
+                    className={`zoom-toggle-button ${zoomEnabled ? 'active' : ''}`}
+                    onClick={toggleZoom}
+                    title={zoomEnabled ? "Desactivar zoom" : "Activar zoom"}
                   >
-                    <path
-                      d="M15 18L9 12L15 6"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  Volver
-                </button>
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx="11"
+                        cy="11"
+                        r="7"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      />
+                      <path
+                        d="M11 8V14M8 11H14"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M16 16L21 21"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                    {zoomEnabled ? 'Zoom activado' : 'Activar zoom'}
+                  </button>
+                </div>
+                
                 <div 
                   className="certificate-zoom-container"
                   onMouseMove={handleMouseMove}
                   onMouseLeave={handleMouseLeave}
-                  style={{ cursor: isZooming ? 'zoom-in' : 'default' }}
+                  style={{ cursor: zoomEnabled ? (isZooming ? 'zoom-in' : 'zoom-out') : 'default' }}
                 >
                   <img
                     src={certificateImages[selectedImage]}

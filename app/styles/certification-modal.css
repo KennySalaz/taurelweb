@@ -561,8 +561,14 @@ margin-bottom: 0px;
   min-height: 500px;
 }
 
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
 .back-button {
-  align-self: flex-start;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -585,6 +591,39 @@ margin-bottom: 0px;
 }
 
 .back-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.zoom-toggle-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: white;
+  color: #243c6b;
+  border: 2px solid #243c6b;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.zoom-toggle-button:hover {
+  background: #f0f4f8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.zoom-toggle-button.active {
+  background: linear-gradient(135deg, #1a90ce 0%, #243c6b 100%);
+  color: white;
+  border-color: transparent;
+}
+
+.zoom-toggle-button svg {
   width: 20px;
   height: 20px;
 }
