@@ -377,10 +377,10 @@ export default function Contactanos() {
         </div>
 
         {/* Decoraciones hexagonales */}
-        <div className="hex-decorations-form">
+      {/*   <div className="hex-decorations-form">
           <div className="hex-decoration hex-4"></div>
           <div className="hex-decoration hex-5"></div>
-        </div>
+        </div> */}
       </section>
 
       {/* Sección de Ubicación con Mapa */}
@@ -431,11 +431,11 @@ export default function Contactanos() {
         </div>
 
         {/* Decoraciones hexagonales */}
-        <div className="hex-decorations-map">
+       {/*  <div className="hex-decorations-map">
           <div className="hex-decoration hex-6"></div>
           <div className="hex-decoration hex-7"></div>
           <div className="hex-decoration hex-8"></div>
-        </div>
+        </div> */}
       </section>
     </div>
   );

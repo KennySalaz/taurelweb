@@ -90,10 +90,12 @@
 }
 .mapa-venezuela-points {
   position: absolute;
-  top: 0;
   right: 0;
   z-index: 100;
-  width: 60vh;
+  width: 50%;
+    height: 100%;
+    object-fit: contain;
+    bottom: -100px;
 }
 .taurel-logo {
   width: 180px;

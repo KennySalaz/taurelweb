@@ -60,6 +60,20 @@ const sampleLocations: Location[] = [
     address: 'Entrada Urb. Playa Grande, Zona Industrial. Catia La Mar, Edo. Vargas.',
     coordinates: { lat: 10.603761, lng: -67.033211 },
     phone: '+58 (212) 352-1802'
+  },
+  {
+    id: '7',
+    name: 'Valencia',
+    address: 'Zona Ind. Sur. Av. Henry Ford. C.C. Paseo las Industrias. Valencia. Venezuela.',
+    coordinates: { lat: 10.162083, lng: -67.993889 },
+    phone: '+58 (241) 8331808'
+  },
+  {
+    id: '8',
+    name: 'Puerto Cabello',
+    address: 'Prolongación Av. La Marina, detrás de La Catedral San José, Edif. Taurel & Cia., Puerto Cabello Edo- Carabobo. 2050 – Venezuela.',
+    coordinates: { lat: 10.472222, lng: -68.012500 },
+    phone: '+58 (242) 406300'
   }
 ];
 
