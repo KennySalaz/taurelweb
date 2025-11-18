@@ -397,7 +397,10 @@ const translations = {
         },
         storage: {
           title: 'Storage and Distribution:',
-          internationalPurchases: 'International Purchases:',
+          description: 'We have equipped and operational warehouses that offer packaging and container stuffing/unstuffing solutions. They also have an In Bond Customs Warehouse and handle complete supply chain management.'
+        },
+        internationals: {
+          title: 'International Purchases:',
           description: 'We provide you with a trained and high-performance team that will guide you at every step throughout the entire process, from where to make your purchases to placing it at your factory door. Covering demand from Asia to Latin America.',
           list1: 'Comprehensive purchasing and logistics solutions, with air and sea shipments.',
           list2: 'Cargo consolidation, regardless of size and location.',
