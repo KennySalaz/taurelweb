@@ -27,11 +27,11 @@ export function meta() {
 
 export default function Servicios() {
   const { t } = useLanguage();
-  
+
   return (
     <div className="servicios-page">
       <div className="page-header-servicios">
-        <h2>{t('services.page.title')}</h2>
+        <h2>{t("services.page.title")}</h2>
       </div>
       {/* Asesoría Técnica */}
       <section className="advisory-section section">
@@ -56,18 +56,18 @@ export default function Servicios() {
                   src={hexagonIcon}
                   alt=""
                 />
-                <h2>{t('services.page.advisory.title')}</h2>
+                <h2>{t("services.page.advisory.title")}</h2>
               </div>
               <p className="service-description">
-                {t('services.page.advisory.description')}
+                {t("services.page.advisory.description")}
               </p>
               <ul className="service-list">
-                <li>{t('services.page.advisory.list1')}</li>
-                <li>{t('services.page.advisory.list2')}</li>
-                <li>{t('services.page.advisory.list3')}</li>
+                <li>{t("services.page.advisory.list1")}</li>
+                <li>{t("services.page.advisory.list2")}</li>
+                <li>{t("services.page.advisory.list3")}</li>
               </ul>
               <p className="service-extra-info">
-                {t('services.page.advisory.extraInfo')}
+                {t("services.page.advisory.extraInfo")}
               </p>
             </AnimatedElement>
 
@@ -109,18 +109,16 @@ export default function Servicios() {
                     src={hexagonIcon}
                     alt=""
                   />
-                  <h2>{t('services.page.international.title')}</h2>
+                  <h2>{t("services.page.international.title")}</h2>
                 </div>
                 <p className="service-highlight">
-                  <em>
-                    {t('services.page.international.highlight')}
-                  </em>
+                  <em>{t("services.page.international.highlight")}</em>
                 </p>
                 <ul className="service-list">
-                  <li>{t('services.page.international.list1')}</li>
-                  <li>{t('services.page.international.list2')}</li>
-                  <li>{t('services.page.international.list3')}</li>
-                  <li>{t('services.page.international.list4')}</li>
+                  <li>{t("services.page.international.list1")}</li>
+                  <li>{t("services.page.international.list2")}</li>
+                  <li>{t("services.page.international.list3")}</li>
+                  <li>{t("services.page.international.list4")}</li>
                 </ul>
               </AnimatedElement>
               <div className="service-content-wrapper">
@@ -134,10 +132,10 @@ export default function Servicios() {
                       src={hexagonIcon}
                       alt=""
                     />
-                    <h2>{t('services.page.landTransport.title')}</h2>
+                    <h2>{t("services.page.landTransport.title")}</h2>
                   </div>
                   <p className="service-description">
-                    {t('services.page.landTransport.description')}
+                    {t("services.page.landTransport.description")}
                   </p>
                 </AnimatedElement>
               </div>
@@ -171,6 +169,7 @@ export default function Servicios() {
         <div className="bg-asolute-heaxogono14">
           <motion.img src={hexagono14} alt="Mapa mundial" />
         </div>
+
         <div className="container">
           <div className="storage-maritime-content">
             <div className="map-background">
@@ -190,19 +189,22 @@ export default function Servicios() {
                     src={hexagonIcon}
                     alt=""
                   />
-                  <h2>{t('services.page.storage.title')}</h2>
+                  <h2>{t("services.page.storage.title")}</h2>
                 </div>
 
                 <p className="service-description">
-                  <strong>{t('services.page.storage.internationalPurchases')}</strong> {t('services.page.storage.description')}
+                  {/* <strong>
+                    {t("services.page.storage.internationalPurchases")}
+                  </strong>{" "} */}
+                  {t("services.page.storage.description")}
                 </p>
 
-                <ul className="service-list">
-                  <li>{t('services.page.storage.list1')}</li>
-                  <li>{t('services.page.storage.list2')}</li>
-                  <li>{t('services.page.storage.list3')}</li>
-                  <li>{t('services.page.storage.list4')}</li>
-                </ul>
+                {/* <ul className="service-list">
+                  <li>{t("services.page.storage.list1")}</li>
+                  <li>{t("services.page.storage.list2")}</li>
+                  <li>{t("services.page.storage.list3")}</li>
+                  <li>{t("services.page.storage.list4")}</li>
+                </ul> */}
               </AnimatedElement>
               <AnimatedElement
                 animation="fadeLeft"
@@ -225,6 +227,38 @@ export default function Servicios() {
               </AnimatedElement>
             </div>
 
+            <AnimatedElement
+              animation="fadeUp"
+              delay={0.2}
+              className="maritime-section"
+            >
+              <div className="service-icon-title">
+                <img
+                  style={{ width: "40px", height: "40px" }}
+                  src={hexagonIcon}
+                  alt=""
+                />
+                <h2>{t("services.page.internationals.title")}</h2>
+              </div>
+
+              <p className="service-description">
+                {t("services.page.internationals.description")}
+              </p>
+
+              {/* <p className="service-description">
+                <strong>
+                  {t("services.page.internationals.internationalPurchases")}
+                </strong>{" "}
+                {t("services.page.internationals.description")}
+              </p> */}
+
+              <ul className="service-list">
+                <li>{t("services.page.internationals.list1")}</li>
+                <li>{t("services.page.internationals.list2")}</li>
+                <li>{t("services.page.internationals.list3")}</li>
+                <li>{t("services.page.internationals.list4")}</li>
+              </ul>
+            </AnimatedElement>
             {/* Servicios Navieros */}
             <AnimatedElement
               animation="fadeUp"
@@ -237,31 +271,31 @@ export default function Servicios() {
                   src={hexagonIcon}
                   alt=""
                 />
-                <h2>{t('services.page.maritime.title')}</h2>
+                <h2>{t("services.page.maritime.title")}</h2>
               </div>
 
               <p className="service-description">
-                {t('services.page.maritime.description')}
+                {t("services.page.maritime.description")}
               </p>
 
               <div className="maritime-services-grid">
                 <div className="maritime-service-column">
-                  <h4>{t('services.page.maritime.containers.title')}</h4>
+                  <h4>{t("services.page.maritime.containers.title")}</h4>
                   <ul className="service-sublist">
-                    <li>{t('services.page.maritime.containers.list1')}</li>
-                    <li>{t('services.page.maritime.containers.list2')}</li>
-                    <li>{t('services.page.maritime.containers.list3')}</li>
-                    <li>{t('services.page.maritime.containers.list4')}</li>
+                    <li>{t("services.page.maritime.containers.list1")}</li>
+                    <li>{t("services.page.maritime.containers.list2")}</li>
+                    <li>{t("services.page.maritime.containers.list3")}</li>
+                    <li>{t("services.page.maritime.containers.list4")}</li>
                   </ul>
                 </div>
 
                 <div className="maritime-service-column">
-                  <h4>{t('services.page.maritime.actingAs.title')}</h4>
+                  <h4>{t("services.page.maritime.actingAs.title")}</h4>
                   <ul className="service-sublist">
-                    <li>{t('services.page.maritime.actingAs.list1')}</li>
-                    <li>{t('services.page.maritime.actingAs.list2')}</li>
-                    <li>{t('services.page.maritime.actingAs.list3')}</li>
-                    <li>{t('services.page.maritime.actingAs.list4')}</li>
+                    <li>{t("services.page.maritime.actingAs.list1")}</li>
+                    <li>{t("services.page.maritime.actingAs.list2")}</li>
+                    <li>{t("services.page.maritime.actingAs.list3")}</li>
+                    <li>{t("services.page.maritime.actingAs.list4")}</li>
                   </ul>
                 </div>
               </div>
@@ -313,10 +347,10 @@ export default function Servicios() {
                   src={hexagonIcon}
                   alt=""
                 />
-                <h2>{t('services.page.customs.title')}</h2>
+                <h2>{t("services.page.customs.title")}</h2>
               </div>
               <p className="service-description">
-                {t('services.page.customs.description')}
+                {t("services.page.customs.description")}
               </p>
             </AnimatedElement>
           </div>
@@ -328,7 +362,7 @@ export default function Servicios() {
         <div>
           <AnimatedElement animation="fadeUp">
             <div className="logistics-chain-header">
-              <h2>{t('services.page.logisticsChain.title')}</h2>
+              <h2>{t("services.page.logisticsChain.title")}</h2>
             </div>
           </AnimatedElement>
           <AnimatedElement animation="fadeUp" delay={0.2}>
@@ -336,7 +370,11 @@ export default function Servicios() {
               <div className="logistics-flow-background"></div>
               <div className="logistics-flow-mobile">
                 <img src={cadenaImagen1} alt="Cadena logística parte 1" />
-                <img style={{marginTop:"-40px"}} src={cadenaImagen2} alt="Cadena logística parte 2" />
+                <img
+                  style={{ marginTop: "-40px" }}
+                  src={cadenaImagen2}
+                  alt="Cadena logística parte 2"
+                />
               </div>
             </div>
           </AnimatedElement>

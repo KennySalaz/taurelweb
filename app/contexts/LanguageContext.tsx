@@ -160,8 +160,11 @@ const translations = {
         },
         storage: {
           title: 'Almacenamiento y Distribución:',
-          internationalPurchases: 'Compras Internacionales:',
-          description: 'contamos con almacenes equipados y operativos que ofrecen soluciones de embalaje y llenado/vaciado de contenedores. También disponen de un Depósito Aduanero In Bond y se encargan de la gestión completa de la cadena de suministros.',
+          description: 'Contamos con almacenes equipados y operativos que ofrecen soluciones de embalaje y llenado/vaciado de contenedores. También disponen de un Depósito Aduanero In Bond y se encargan de la gestión completa de la cadena de suministros.',
+        },
+        internationals: {
+          title: 'Compras Internacionales:',
+          description: 'Ponemos a tu disposición un equipo capacitado y de alto rendimiento que te guiará en cada paso durante todo el proceso, desde donde realizar tus compras hasta colocarlo en la puerta de tu fábrica. Cubriendo demanda desde Asia hasta Latinoamérica. ',
           list1: 'Soluciones integrales en compras y logísticas, con envíos aéreos y marítimos.',
           list2: 'Consolidación de carga, sin importar el tamaño y ubicación.',
           list3: 'Networking, investigación de mercado para importación y exportación.',
