@@ -137,7 +137,7 @@ const translations = {
         }
       },
       page: {
-        title: 'Nuestras Soluciones Logística',
+        title: 'Nuestras Soluciones Logísticas',
         advisory: {
           title: 'Asesoría técnica',
           description: 'Ponemos a tu disposición asesoría técnica especializada en materia de aduanas, comercio internacional e integración económica.',
