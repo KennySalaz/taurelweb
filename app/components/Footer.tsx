@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../styles/footer.css";
@@ -20,7 +20,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 
 const Footer = () => {
   const { language, setLanguage, t } = useLanguage();
-  const [useElfsight, setUseElfsight] = useState(true); // Cambiar a true cuando tengas el widget ID
+  // const [useElfsight, setUseElfsight] = useState(true); // Comentado temporalmente
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
@@ -33,7 +33,8 @@ const Footer = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Cargar script de Elfsight
+  // Cargar script de Elfsight - COMENTADO TEMPORALMENTE
+  /*
   useEffect(() => {
     if (useElfsight) {
       const script = document.createElement('script');
@@ -51,6 +52,7 @@ const Footer = () => {
       };
     }
   }, [useElfsight]);
+  */
 
   // Posts de Instagram de fallback
   const fallbackPosts = [
@@ -285,37 +287,37 @@ const Footer = () => {
             <div className="recent-posts">
               <h3>{t("footer.recentPosts")}</h3>
               <div className="posts-row">
+                {/* Widget de Elfsight - COMENTADO TEMPORALMENTE */}
+                {/* 
                 {useElfsight ? (
-                  // Widget de Elfsight Instagram Feed
                   <div 
                     className="elfsight-app-a7f4f4a7-c5b8-4b9c-a9d4-3e8f7c2d1a5b"
                     data-elfsight-app-lazy
                   />
                 ) : (
-                  // Fallback: Imágenes estáticas
-                  <>
-                    {fallbackPosts.map((post, index) => (
-                      <motion.a
-                        key={post.id}
-                        className="post-card"
-                        href={post.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={post.alt}
-                        style={{
-                          backgroundImage: `url(${post.image})`,
-                          backgroundSize: "cover",
-                          backgroundPosition: "center",
-                        }}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        whileHover={{ scale: 1.05 }}
-                      />
-                    ))}
-                  </>
-                )}
+                */}
+                {/* Imágenes estáticas de Instagram */}
+                {fallbackPosts.map((post, index) => (
+                  <motion.a
+                    key={post.id}
+                    className="post-card"
+                    href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={post.alt}
+                    style={{
+                      backgroundImage: `url(${post.image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                  />
+                ))}
+                {/* )} */}
               </div>
             </div>
 
