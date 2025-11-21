@@ -51,26 +51,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  padding: 15px;
-  height: 100px;
+  flex-direction: column;
+  cursor: pointer;
   min-width: 140px;
+  height: 80px;
   transition: all 0.3s ease;
   flex-shrink: 0;
 }
 
 .partner-logo-item img {
-  max-width: 100%;
-  max-height: 140px;
+  max-width: 130px;
+  max-height: 70px;
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(20%);
-  transition: filter 0.3s ease;
+  filter: grayscale(0.2);
+  transition: all 0.3s ease;
 }
 
 .partner-logo-item:hover img {
-  filter: grayscale(0%);
+  filter: grayscale(0);
+  transform: scale(1.05);
 }
 
 /* Botón Back to Top */

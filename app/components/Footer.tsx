@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "../styles/footer.css";
@@ -20,6 +20,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 
 const Footer = () => {
   const { language, setLanguage, t } = useLanguage();
+  const [useElfsight, setUseElfsight] = useState(true); // Cambiar a true cuando tengas el widget ID
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
@@ -31,6 +32,47 @@ const Footer = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Cargar script de Elfsight
+  useEffect(() => {
+    if (useElfsight) {
+      const script = document.createElement('script');
+      script.src = 'https://static.elfsight.com/platform/platform.js';
+      script.setAttribute('data-use-service-core', '');
+      script.defer = true;
+      document.body.appendChild(script);
+
+      return () => {
+        // Limpiar el script al desmontar
+        const existingScript = document.querySelector('script[src="https://static.elfsight.com/platform/platform.js"]');
+        if (existingScript) {
+          document.body.removeChild(existingScript);
+        }
+      };
+    }
+  }, [useElfsight]);
+
+  // Posts de Instagram de fallback
+  const fallbackPosts = [
+    {
+      id: "1",
+      image: instaPost1,
+      url: "https://www.instagram.com/taurel_oficial/",
+      alt: "Publicación de Instagram 1"
+    },
+    {
+      id: "2",
+      image: instaPost2,
+      url: "https://www.instagram.com/taurel_oficial/",
+      alt: "Publicación de Instagram 2"
+    },
+    {
+      id: "3",
+      image: instaPost3,
+      url: "https://www.instagram.com/taurel_oficial/",
+      alt: "Publicación de Instagram 3"
+    }
+  ];
 
   const validateField = (name: string, value: string) => {
     let error = "";
@@ -243,42 +285,37 @@ const Footer = () => {
             <div className="recent-posts">
               <h3>{t("footer.recentPosts")}</h3>
               <div className="posts-row">
-                <a
-                  className="post-card"
-                  href="https://www.instagram.com/taurel.ve?igsh=dXhlYW5zZGJ5MzZ6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Ver perfil de Instagram de Taurel"
-                  style={{
-                    backgroundImage: `url(${instaPost1})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                />
-                <a
-                  className="post-card"
-                  href="https://www.instagram.com/taurel.ve?igsh=dXhlYW5zZGJ5MzZ6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Ver perfil de Instagram de Taurel"
-                  style={{
-                    backgroundImage: `url(${instaPost2})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                />
-                <a
-                  className="post-card"
-                  href="https://www.instagram.com/taurel.ve?igsh=dXhlYW5zZGJ5MzZ6"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Ver perfil de Instagram de Taurel"
-                  style={{
-                    backgroundImage: `url(${instaPost3})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                />
+                {useElfsight ? (
+                  // Widget de Elfsight Instagram Feed
+                  <div 
+                    className="elfsight-app-a7f4f4a7-c5b8-4b9c-a9d4-3e8f7c2d1a5b"
+                    data-elfsight-app-lazy
+                  />
+                ) : (
+                  // Fallback: Imágenes estáticas
+                  <>
+                    {fallbackPosts.map((post, index) => (
+                      <motion.a
+                        key={post.id}
+                        className="post-card"
+                        href={post.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={post.alt}
+                        style={{
+                          backgroundImage: `url(${post.image})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                        }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        whileHover={{ scale: 1.05 }}
+                      />
+                    ))}
+                  </>
+                )}
               </div>
             </div>
 

@@ -24,6 +24,7 @@ import imageG15 from "../assets/package-nosotros/Logo camara de comercio 15.png"
 import imageG16 from "../assets/package-nosotros/Logo camara de comercio 16.png";
 import imageG17 from "../assets/package-nosotros/Logo camara de comercio 17.png";
 import imageG18 from "../assets/package-nosotros/Logo camara de comercio 18.png";
+import imageG19 from "../assets/package-nosotros/FEDECAMARAS.png";
 import imageEmpresa1 from "../assets/package-nosotros-empresa/1.png";
 import imageEmpresa2 from "../assets/package-nosotros-empresa/2.png";
 import imageEmpresa3 from "../assets/package-nosotros-empresa/3.png";
@@ -109,6 +110,7 @@ export default function SobreNosotros() {
       nombre: "Cámara de Comercio e Industria Venezolano Italiana",
       slug: imageG18,
     },
+    { nombre: "FEDECAMARAS", slug: imageG19 },
   ];
 
   return (

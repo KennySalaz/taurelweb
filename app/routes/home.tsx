@@ -19,7 +19,7 @@ import img1999 from "../assets/1999.png";
 import img2002 from "../assets/2002.png";
 import img2024 from "../assets/2024.png";
 import img1994 from "../assets/1994.png";
-import videoBannerHorizontal from "../assets/BANNER HORIZONTAL.mp4";
+import videoBannerHorizontal from "../assets/videobanner.mp4";
 import videoBannerVertical from "../assets/BANNER VERTICAL.mp4";
 import maos2 from "../assets/maos2.png";
 export function meta({}: Route.MetaArgs) {

@@ -1,6 +1,175 @@
-# Configuración de Instagram API
+# Configuración de Instagram Feed con Elfsight
 
-Esta guía te ayudará a configurar la integración con Instagram para mostrar tus últimas publicaciones en el footer del sitio web.
+Esta guía te ayudará a configurar el widget de Elfsight Instagram Feed para mostrar tus últimas publicaciones en el footer del sitio web.
+
+## 🚀 Configuración de Elfsight Instagram Feed
+
+### 1. Crear cuenta en Elfsight
+
+1. Ve a [Elfsight](https://apps.elfsight.com/)
+2. Haz click en **"Sign Up"** o **"Registrarse"**
+3. Puedes registrarte con:
+   - Email
+   - Cuenta de Google
+   - Cuenta de Facebook
+
+### 2. Crear el widget de Instagram Feed
+
+1. Una vez dentro del panel, haz click en **"Create Widget"** o **"Crear Widget"**
+2. Busca y selecciona **"Instagram Feed"**
+3. Haz click en **"Connect Instagram"** para conectar tu cuenta
+4. Autoriza el acceso a tu cuenta de Instagram
+
+### 3. Configurar el widget
+
+Ajusta las siguientes configuraciones para que se vea perfecto en el footer:
+
+#### **Layout (Diseño)**
+- **Layout type**: Grid (Cuadrícula)
+- **Columns**: 3
+- **Rows**: 1
+- **Posts to show**: 3
+
+#### **Header (Encabezado)**
+- **Show header**: OFF (Desactivado)
+- **Show username**: OFF (Desactivado)
+- **Show profile picture**: OFF (Desactivado)
+
+#### **Posts (Publicaciones)**
+- **Show captions**: OFF (Opcional)
+- **Show likes**: OFF (Desactivado)
+- **Show comments**: OFF (Desactivado)
+
+#### **Follow Button (Botón de seguir)**
+- **Show follow button**: OFF (Desactivado)
+
+#### **Theme (Tema)**
+- **Theme**: Custom (Personalizado)
+- **Background color**: Transparente o #233c67 (para que combine con el footer)
+- **Text color**: #ffffff (blanco)
+
+#### **Spacing (Espaciado)**
+- **Gap between posts**: 14px
+
+### 4. Obtener el Widget ID
+
+1. Una vez configurado, haz click en **"Add to website"** o **"Agregar a sitio web"**
+2. Verás un código similar a este:
+
+```html
+<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-12345678-abcd-1234-efgh-123456789abc"></div>
+```
+
+3. Copia el **Widget ID** (la parte después de `elfsight-app-`)
+   - En el ejemplo sería: `12345678-abcd-1234-efgh-123456789abc`
+
+### 5. Configurar el Widget ID en el código
+
+Abre el archivo `app/components/Footer.tsx` y busca la línea 290 aproximadamente:
+
+```tsx
+<div 
+  className="elfsight-app-a7f4f4a7-c5b8-4b9c-a9d4-3e8f7c2d1a5b"
+  data-elfsight-app-lazy
+/>
+```
+
+Reemplaza `a7f4f4a7-c5b8-4b9c-a9d4-3e8f7c2d1a5b` con tu **Widget ID** real.
+
+### 6. Activar/Desactivar el widget
+
+En el archivo `Footer.tsx`, línea 23, encontrarás:
+
+```tsx
+const [useElfsight, setUseElfsight] = useState(true);
+```
+
+- **`true`**: Usa el widget de Elfsight (dinámico, se actualiza automáticamente)
+- **`false`**: Usa las imágenes estáticas de fallback
+
+## 💰 Planes de Elfsight
+
+### Plan Gratuito
+- ✅ Widget funcional
+- ✅ Actualización automática
+- ⚠️ Marca de agua "Powered by Elfsight"
+- ⚠️ Límite de visualizaciones mensuales
+
+### Plan Lite ($5/mes)
+- ✅ Sin marca de agua
+- ✅ Ilimitadas visualizaciones
+- ✅ Soporte por email
+
+### Plan Pro ($10/mes)
+- ✅ Todo lo del plan Lite
+- ✅ Widgets ilimitados
+- ✅ Soporte prioritario
+
+## 🔄 Alternativa: Usar imágenes estáticas
+
+Si no quieres usar Elfsight, puedes desactivar el widget:
+
+1. En `Footer.tsx`, cambia:
+```tsx
+const [useElfsight, setUseElfsight] = useState(false);
+```
+
+2. Las imágenes de fallback se encuentran en:
+   - `app/assets/redes/1.jpg`
+   - `app/assets/redes/2.jpg`
+   - `app/assets/redes/3.jpg`
+
+3. Reemplaza estas imágenes con tus últimas publicaciones cuando quieras actualizar
+
+## 🎨 Personalización adicional
+
+Los estilos del widget se encuentran en `app/styles/footer.css` líneas 120-180.
+
+Puedes ajustar:
+- Tamaño de las tarjetas (actualmente 110px x 110px)
+- Espaciado entre tarjetas (gap: 14px)
+- Efectos hover
+- Sombras y bordes
+
+## ⚙️ Verificar que funciona
+
+1. Guarda los cambios en `Footer.tsx`
+2. Reinicia el servidor de desarrollo si es necesario
+3. Abre el sitio web y ve al footer
+4. Deberías ver tus 3 últimas publicaciones de Instagram
+
+## 🆘 Solución de problemas
+
+### El widget no se muestra
+- Verifica que el Widget ID esté correctamente configurado
+- Revisa la consola del navegador para ver errores
+- Asegúrate de que `useElfsight` esté en `true`
+
+### Se muestra "Powered by Elfsight"
+- Es normal en el plan gratuito
+- Actualiza a plan de pago para removerlo
+
+### Las publicaciones no se actualizan
+- El widget se actualiza automáticamente cada 24 horas
+- Puedes forzar actualización desde el panel de Elfsight
+
+### El widget se ve desalineado
+- Revisa los estilos CSS en `footer.css`
+- Asegúrate de que las clases CSS no estén siendo sobrescritas
+
+## 📞 Soporte
+
+- **Elfsight Support**: [https://elfsight.com/support/](https://elfsight.com/support/)
+- **Documentación**: [https://elfsight.com/instagram-feed-instashow/](https://elfsight.com/instagram-feed-instashow/)
+
+---
+
+## 🔗 Enlaces útiles
+
+- [Panel de Elfsight](https://apps.elfsight.com/panel/applications/)
+- [Instagram Feed Widget](https://apps.elfsight.com/panel/applications/instashow/)
+- [Guía de personalización](https://help.elfsight.com/article/522-instagram-feed-widget-customization)
 
 ## Pasos para obtener las credenciales de Instagram
 

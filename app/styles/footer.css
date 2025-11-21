@@ -124,6 +124,46 @@
   margin-bottom: 18px;
 }
 
+/* Estilos para el widget de Elfsight */
+.posts-row [class*="elfsight-app"] {
+  width: 100%;
+  min-height: 110px;
+  grid-column: 1 / -1;
+}
+
+/* Ocultar elementos innecesarios del widget de Elfsight */
+.posts-row [class*="elfsight-app"] .eapps-instagram-feed-header,
+.posts-row [class*="elfsight-app"] .eapps-instagram-feed-follow-button,
+.posts-row [class*="elfsight-app"] .eapps-link {
+  display: none !important;
+}
+
+/* Ajustar el grid del widget de Elfsight */
+.posts-row [class*="elfsight-app"] [class*="feed-grid"] {
+  display: grid !important;
+  grid-template-columns: repeat(3, 110px) !important;
+  gap: 14px !important;
+}
+
+/* Estilizar los posts individuales del widget */
+.posts-row [class*="elfsight-app"] [class*="feed-item"] {
+  width: 110px !important;
+  height: 110px !important;
+  border-radius: 10px !important;
+  overflow: hidden !important;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.posts-row [class*="elfsight-app"] [class*="feed-item"]:hover {
+  transform: translateY(-5px) !important;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
 .post-card {
   display: block;
   width: 110px;
